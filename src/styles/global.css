@@ -1,0 +1,68 @@
+/* src/styles/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+html, body {
+  height: 100%;
+
+}
+
+.slider {
+  display: flex; /* Ensure the slider uses flexbox */
+  align-items: center; /* Center items vertically */
+}
+.faded-edges {
+
+  mask-image: linear-gradient(to left, transparent, white 20%, white 80%, transparent);
+}
+
+.boxanimated {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+width:"100%";
+  border: 4px solid #0000;
+  border-radius: 23px;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(
+        var(--angle),
+        #8485E6,
+        #21228E,
+        #5253B917
+      ) border-box;
+  animation: 4s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.cover-bg{
+
+background-image:url('../assets/images/mobileframe.svg');
+background-size:cover;
+background-repeat:cover
+}
+.box {
+  @apply relative  rounded-xl; /* Main box styles */
+}
+
+.box:after {
+  content: "";
+  @apply absolute w-12 h-12 -top-2 -right-2 border-t-4 border-r-4 border-[#5253B9] rounded-tr-xl; /* Top-right corner */
+}
+
+.box:before {
+  content: "";
+  @apply absolute w-12 h-12 -bottom-1 -left-1 border-b-4 border-l-4 border-[#5253B9] rounded-bl-xl; /* Bottom-left corner */
+}

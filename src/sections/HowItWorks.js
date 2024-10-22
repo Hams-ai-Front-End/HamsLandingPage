@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Box, Container, Text, Image } from "theme-ui";
 import { useTranslation } from "react-i18next";
-import img1 from "../assets/images/tell.png"; // Image for step
-import img2 from "../assets/images/pick.png"; // Image for step
-import img3 from "../assets/images/tech.png"; // Image for step
-import img4 from "../assets/images/easly.png"; // Image for step
+import img1 from "../assets/images/how/Engage customers across their preferred channels.svg"; // Image for step
+import img2 from "../assets/images/how/Supercharge accuracy with your company data.svg"; // Image for step
+import img3 from "../assets/images/how/Automate complex tasks with agents.svg"; // Image for step
+import img4 from "../assets/images/how/Easily create AI agents in minutes.svg"; // Image for step
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { backgrounds, padding } from "polished";
@@ -43,7 +43,7 @@ const HowItWorks = () => {
               data-aos-duration="1200" // Custom duration for each card
               data-aos-delay={index * 200} // Delay the animation for each card
             >
-              <Image src={images[index]} alt="" sx={styles.stepImage} cl />
+              <Image src={images[index]} alt="" sx={styles.stepImage}  />
               <Text
                 as="span"
                 sx={{
@@ -118,7 +118,7 @@ mb:8
     borderRadius: "12px",
     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
     width: "100%",
-    height: "229px",
+   
     mb: 4,
    
     display: "block",

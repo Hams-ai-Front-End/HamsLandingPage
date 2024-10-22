@@ -75,7 +75,7 @@ function PremiumFeature() {
         {renderStyledText(t("How it work"))}
         <div className="w-full flex flex-col items-center justify-center">
           <hr className="h-[5px] w-[25px] bg-[#5253B9]" />
-          <p className="text-[16px] py-5 font-light">
+          <p className="text-[16px] py-5 font-light px-3">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut lsed do eiusmod tempor
           </p>
@@ -83,7 +83,7 @@ function PremiumFeature() {
       </Text>
       <div className="grid lg:grid-cols-6">
         <div
-          className="lg:col-span-2 lg:mx-0 mx-12 my-14"
+          className="lg:col-span-2 lg:mx-0 md:mx-12 mx-6 md:h-[500px] lg:h-[445px] h-[300px] my-14"
           data-aos={"fade-left"}
           data-aos-duration="1200" // Custom duration for each card
           data-aos-delay={200} // Delay the animation for each card

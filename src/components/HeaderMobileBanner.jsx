@@ -12,7 +12,7 @@ const HeaderMobileBanner = () => {
   }, []);
 
   return (
-    <div className="flex w-full justify-between">
+    <div className="flex w-full justify-between lg:px-4 md:px-4 px-3 py-3">
       <h2 className='font-bold text-sm'>Hams.<span className='text-[#3132A9]'>Ai</span></h2>
       <span dir="ltr">{localTime}</span>
     </div>

@@ -59,11 +59,13 @@ const PremiumFeature = () => {
               <p>Lorem ipsum dolor sit amet, sed do</p>
             </div>
           </div>
+          <div className=" z-50">      <AccordionList sections={data} /></div>
           <div>
-            <AccordionList sections={data} />
+      
           </div>
 
         </div>
+  
       </Container>
     </section>
   );

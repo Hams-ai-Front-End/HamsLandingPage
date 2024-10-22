@@ -3,11 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-html, body {
+html,
+body {
   height: 100%;
-
 }
 
 .slider {
@@ -15,8 +13,22 @@ html, body {
   align-items: center; /* Center items vertically */
 }
 .faded-edges {
-
-  mask-image: linear-gradient(to left, transparent, white 20%, white 80%, transparent);
+  mask-image: linear-gradient(
+    to left,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+.faded-edges2 {
+  mask-image: linear-gradient(
+    to left,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
 }
 
 .boxanimated {
@@ -24,15 +36,12 @@ html, body {
   justify-content: center;
   align-items: center;
 
-width:"100%";
-  border: 4px solid #0000;
-  border-radius: 23px;
-  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(
-        var(--angle),
-        #8485E6,
-        #21228E,
-        #5253B917
-      ) border-box;
+  width: "100%";
+  border: 3px solid #0000;
+  border-radius: 3px;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(var(--angle), #8485e6, #21228e, #5253b917) border-box;
   animation: 4s rotate linear infinite;
 }
 
@@ -47,11 +56,10 @@ width:"100%";
   initial-value: 0deg;
   inherits: false;
 }
-.cover-bg{
-
-background-image:url('../assets/images/mobileframe.svg');
-background-size:cover;
-background-repeat:cover
+.cover-bg {
+  background-image: url("../assets/images/mobileframe.svg");
+  background-size: cover;
+  background-repeat: cover;
 }
 .box {
   @apply relative  rounded-xl; /* Main box styles */
@@ -65,4 +73,70 @@ background-repeat:cover
 .box:before {
   content: "";
   @apply absolute w-12 h-12 -bottom-1 -left-1 border-b-4 border-l-4 border-[#5253B9] rounded-bl-xl; /* Bottom-left corner */
+}
+
+.call-buton .cc-calto-action-ripple {
+  z-index: 99999;
+  right: 1rem;
+  bottom: 8rem;
+  background: #5253B9; /* Updated color */
+  width: 3.3rem;
+  height: 3.3rem;
+  padding: 1rem;
+  border-radius: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #ffffff;
+  -webkit-animation: cc-calto-action-ripple 0.6s linear infinite;
+  animation: cc-calto-action-ripple 0.6s linear infinite;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-decoration: none; 
+}
+
+.call-buton .cc-calto-action-ripple i {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  font-size: 2.2rem; 
+}
+
+.call-buton .cc-calto-action-ripple:hover i {
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg); 
+}
+
+@-webkit-keyframes cc-calto-action-ripple {
+  0% {
+      -webkit-box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 0 rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2);
+      box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 0 rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2);
+  }
+  100% {
+      -webkit-box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2), 0 0 0 20px rgba(82, 83, 185, 0);
+      box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2), 0 0 0 20px rgba(82, 83, 185, 0);
+  }
+}
+
+@keyframes cc-calto-action-ripple {
+  0% {
+      -webkit-box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 0 rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2);
+      box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 0 rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2);
+  }
+  100% {
+      -webkit-box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2), 0 0 0 20px rgba(82, 83, 185, 0);
+      box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2), 0 0 0 20px rgba(82, 83, 185, 0);
+  }
+}
+
+span.num {
+  position: absolute;
+  color: #5253B9; /* Updated color */
+  left: -30%;
+  bottom: -50%;
 }

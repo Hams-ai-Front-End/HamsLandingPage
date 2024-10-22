@@ -37,7 +37,7 @@ export default function Header() {
 
   const menuItems = [
     { name: "Home", anchor: "home", subItem: false },
-    { name: "Why hjz", anchor: "", subItem: true },
+    { name: "product", anchor: "", subItem: true },
     { name: "OUR_MISSION", anchor: "OUR_MISSION", subItem: false },
     { name: "FAQs", anchor: "FAQs", subItem: false },
     { name: "How it work", anchor: "HowUseIt", subItem: false },

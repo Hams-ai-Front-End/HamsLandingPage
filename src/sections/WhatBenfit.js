@@ -53,7 +53,7 @@ function WhatBenfit() {
 
   return (
     <div className=" mt-4" id="WhatBenfit">
-    <Container>
+    <div className=" md:mx-16 lg:mx-32 mx-6">
       <Text as="h2" sx={styles.heading}>
         {renderStyledText(t('whatHams'))}
         <div className="w-full flex justify-center">
@@ -63,6 +63,7 @@ function WhatBenfit() {
       <Box sx={styles.cardGrid}>
         {items.map((item, index) => (
           <Box key={index} sx={styles.card(index)} 
+          className=" border-[1px]"
           data-aos={"zoom-in"}
           data-aos-duration="1200" // Custom duration for each card
           data-aos-delay={index * 200} // Delay the animation for each card
@@ -74,7 +75,7 @@ function WhatBenfit() {
           </Box>
         ))}
       </Box>
-    </Container>
+    </div>
 
     </div>
 
@@ -88,13 +89,13 @@ const styles = {
     fontWeight: 600,
     fontSize: ["30px", null, null, "40px"],
     textAlign: "center",
-    mb: 8,
+    mb: 2,
   },
   cardGrid: {
     display: "grid",
     gridTemplateColumns: ["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(3, 1fr)"],
     gap: "20px", // Adjust spacing between cards
-    my:12,
+    my:10,
   },
   card: (index) => ({
     

@@ -32,8 +32,8 @@ const Banner = () => {
   return (
     <section id="home" sx={styles.section} >
       <div className="lg:mx-24 py-12 lg:py-2  ">
-        <div className="grid justify-center h-full items-center lg:grid-cols-2 grid-cols-1  p-12">
-          <Box sx={styles.bannerContent} className="relative  lg:min-h-[70vh] flex flex-col justify-center items- ">
+        <div className="grid justify-center h-full items-center lg:grid-cols-2 grid-cols-1  md:grid-cols-1  p-12">
+          <Box sx={styles.bannerContent} className="relative  lg:min-h-[70vh] flex flex-col   justify-center items- ">
             {" "}
             {/* Add relative here */}
             <div className=" my-2 shadow-custom px-1 py-2 text-center  rounded-3xl bg-white text-sm ">
@@ -50,17 +50,17 @@ const Banner = () => {
               
                 >
 
-                <span className=" px-2 lg:text-[32px]   leading-10">  {subHeaderText}</span>
+                <span className=" px-2 lg:text-[32px] text-[22px] font-[900]  leading-10">  {subHeaderText}</span>
               
              
-           <span className="text-[#8485E6] lg:text-[32px]   leading-10">{ t('banner_word1')} </span>
+           <span className="text-[#8485E6] lg:text-[32px] text-[22px] font-[900]   leading-10">{ t('banner_word1')} </span>
            
                 
               
                 </span>
               </h1>
               <p
-                className="hjz-introduction"
+                className="hjz-introduction lg:block md:bolck sm:block hidden"
                 style={{
                   fontSize: "1em",
                   margin: "0",

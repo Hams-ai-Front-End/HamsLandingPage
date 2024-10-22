@@ -32,11 +32,11 @@ const BannerForm = () => {
                                 type="text"
                                 name="phoneNumber"
                                 placeholder={t("EnterPhone")}
-                                className={`flex flex-grow rounded-2xl lg:rounded-e-[0px] h-8 py-2 px-3 ${errors.phoneNumber && touched.phoneNumber ? 'border-red-500' : ''}`}
+                                className={`flex flex-grow rounded-md lg:rounded-e-[0px] lg:h-10 h-8 py-2 px-3 ${errors.phoneNumber && touched.phoneNumber ? 'border-red-500' : ''}`}
                             />
                             <button 
                                 type="submit" 
-                                className="bg-gradient-to-r from-[#21228E] h-8 to-[#8485E6] text-white py-2 px-4 w-[120px] lg:rounded-s-[0px] rounded-2xl lg:w-auto w-full shadow-lg"
+                                className="bg-gradient-to-r from-[#21228E] lg:h-10 h-8 to-[#8485E6] text-white py-2 px-4 w-[120px] lg:rounded-s-[0px]  lg:w-auto w-full shadow-lg"
                             >
                                 {t("call-me")}
                             </button>

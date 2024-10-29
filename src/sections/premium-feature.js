@@ -17,8 +17,8 @@ function PremiumFeature() {
   // Function to split the text and return styled components
   const renderStyledText = (text) => {
     const words = text.split(" ");
-    const firstTwoWords = words.slice(0, 2).join(" ");
-    const remainingText = words.slice(2).join(" ");
+    const firstTwoWords = words.slice(0, 1).join(" ");
+    const remainingText = words.slice(1).join(" ");
 
     return (
       <>
@@ -72,7 +72,7 @@ function PremiumFeature() {
   return (
     <section className="py-12 bg-[#5253B90A]" id="HowUseIt">
       <Text as="h2" sx={styles.heading}>
-        {renderStyledText(t("How it work"))}
+        {renderStyledText(t("hams-in-action"))}
         <div className="w-full flex flex-col items-center justify-center">
           <hr className="h-[5px] w-[25px] bg-[#5253B9]" />
           {/* <p className="text-[16px] py-5 font-light px-3">
@@ -82,24 +82,17 @@ function PremiumFeature() {
         </div>
       </Text>
       <div className="grid lg:grid-cols-6">
-        <div
-          className="lg:col-span-2 lg:mx-0 md:mx-12 mx-6 md:h-[500px] lg:h-[445px] h-[300px] my-14"
-       
-        >
+        <div className="lg:col-span-2 lg:mx-0 md:mx-12 mx-6 md:h-[500px] lg:h-[445px] h-[300px] my-14">
           <iframe
             src="https://www.youtube.com/embed/CWgbphDtJJQ?autoplay=1&loop=1&playlist=CWgbphDtJJQ&mute=1"
             title={"hams_solution"}
             className="border-[10px] border-[#8485E6] rounded-lg w-full"
-           
             allow="autoplay; encrypted-media"
             allowFullScreen
             style={{ height: "100%", width: "100%" }}
           />
         </div>
-        <div
-          className="lg:col-span-4 lg:mx-24 mx-8"
-
-        >
+        <div className="lg:col-span-4 lg:mx-24 mx-8">
           <AccordionList
             sections={items}
             iconUp={<GoPlus />}

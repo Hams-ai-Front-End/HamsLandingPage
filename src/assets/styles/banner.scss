@@ -192,8 +192,6 @@ body {
   background-color: #fff !important;
 }
 
-
-
 .css-1ol9p5o-PremiumFeature {
   height: 80px !important;
   margin-left: 10px;
@@ -649,9 +647,9 @@ body {
   .sub-header-demo {
     margin-top: 8%;
   }
-  .container-slider {
-    // padding: 5px 0px !important;
-  }
+  // .container-slider {
+  //   // padding: 5px 0px !important;
+  // }
 
   .container-slider img {
     // height: 80px !important;
@@ -699,12 +697,12 @@ body {
   #word-box {
     font-size: 1em !important;
   }
-  #header-en {
-    // margin-top: 0rem !important;
-    // margin-bottom: 1rem !important;
-    // padding-left: 0rem !important;
-    // padding-right: 0rem !important;
-  }
+  // #header-en {
+  //   // margin-top: 0rem !important;
+  //   // margin-bottom: 1rem !important;
+  //   // padding-left: 0rem !important;
+  //   // padding-right: 0rem !important;
+  // }
 
   #main-image {
     margin-top: 20px;
@@ -998,11 +996,10 @@ input:focus-visible,
   width: 120px;
 }
 .bgMobile {
-background-image: url('../images/mobile.png');
-background-size: contain;
-background-repeat: no-repeat;
+  background-image: url("../images/mobile.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-
 
 #btn-languages:hover {
   transform: scale(1.05);

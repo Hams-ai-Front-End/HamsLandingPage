@@ -83,14 +83,14 @@ function PremiumFeature() {
       </Text>
       <div className="grid lg:grid-cols-6">
         <div className="lg:col-span-2 lg:mx-0 md:mx-12 mx-6 md:h-[500px] lg:h-[445px] h-[300px] my-14">
-          <iframe
+          {/* <iframe
             src="https://www.youtube.com/embed/CWgbphDtJJQ?autoplay=1&loop=1&playlist=CWgbphDtJJQ&mute=1"
             title={"hams_solution"}
             className="border-[10px] border-[#8485E6] rounded-lg w-full"
             allow="autoplay; encrypted-media"
             allowFullScreen
             style={{ height: "100%", width: "100%" }}
-          />
+          /> */}
         </div>
         <div className="lg:col-span-4 lg:mx-24 mx-8">
           <AccordionList

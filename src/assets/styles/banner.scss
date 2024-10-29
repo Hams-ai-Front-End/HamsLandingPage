@@ -192,8 +192,6 @@ body {
   background-color: #fff !important;
 }
 
-
-
 .css-1ol9p5o-PremiumFeature {
   height: 80px !important;
   margin-left: 10px;
@@ -998,11 +996,10 @@ input:focus-visible,
   width: 120px;
 }
 .bgMobile {
-background-image: url('../images/mobile.png');
-background-size: contain;
-background-repeat: no-repeat;
+  background-image: url("../images/mobile.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-
 
 #btn-languages:hover {
   transform: scale(1.05);

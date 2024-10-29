@@ -20,14 +20,17 @@ const HowItWorks = () => {
   const title = t("HowItWorks.title");
   const firstWord = title.split(" ")[0]; // Split by space and take the first element
   const scandWord = title.split(" ")[1];
+  const thirdWord = title.split(" ")[2];
   // External images array corresponding to each step
   const images = [img1, img2, img3, img4];
   return (
-    <section id="how-it-works" sx={styles.section} className=" py-12">
+    <section id="how-it-works" sx={styles.section} className="py-12">
       <Container>
         <Text as="h2" sx={styles.heading}>
           <span className=" text-[#171717]"> {firstWord} </span>
-          <span className=" text-transparent">{scandWord} </span>
+          <span className=" text-transparent">
+            {scandWord} {thirdWord}{" "}
+          </span>
           <div className=" w-full flex justify-center ">
             {" "}
             <hr className=" h-[5px] w-[25px] bg-[#5253B9] " />
@@ -43,7 +46,7 @@ const HowItWorks = () => {
               data-aos-duration="1200" // Custom duration for each card
               data-aos-delay={index * 200} // Delay the animation for each card
             >
-              <Image src={images[index]} alt="" sx={styles.stepImage}  />
+              <Image src={images[index]} alt="" sx={styles.stepImage} />
               <Text
                 as="span"
                 sx={{
@@ -84,7 +87,6 @@ const styles = {
     px: [3, null, null, 4],
     backgroundColor: "#f9f9f9",
     textAlign: "center",
- 
   },
   heading: {
     fontWeight: 600,
@@ -94,7 +96,7 @@ const styles = {
       "linear-gradient(90deg, rgba(49,50,169,1) 0%, rgba(132,133,230,1) 100%)",
     WebkitBackgroundClip: "text",
 
-mb:8
+    mb: 8,
   },
   stepsWrapper: {
     display: "grid",
@@ -110,7 +112,6 @@ mb:8
     transition: "transform 0.3s ease",
     "&:hover": {
       transform: "translateY(-5px)",
-
     },
   },
   stepImage: {
@@ -118,9 +119,9 @@ mb:8
     borderRadius: "12px",
     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
     width: "100%",
-   
+
     mb: 4,
-   
+
     display: "block",
     mx: "auto",
   },

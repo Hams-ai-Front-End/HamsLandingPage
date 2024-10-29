@@ -6,9 +6,7 @@ import BannerForm from "./BannerForm";
 import HeaderMobileBanner from "./HeaderMobileBanner";
 import SliderButton from "./ButtonSlider";
 import pin from "../assets/images/pinss.svg";
-import left from "../assets/images/left.svg"
-import middle from "../assets/images/middle.svg"
-import right from "../assets/images/right.svg"
+
 function SliderBanner() {
   const [selectedId, setSelectedId] = useState(1);
   const [isImageLoaded, setIsImageLoaded] = useState(true);
@@ -36,24 +34,7 @@ function SliderBanner() {
           className="z-0 gap-x-0 gap-y-0 grid-rows-[auto_auto] grid-cols-[9fr_23fr_11fr] auto-cols-fr w-full min-h-full grid absolute inset-x-0 "
           dir="ltr"
         >
-            {/* <img
-            src={left}
-            alt=""
-            className="phone_bg-image  "
-            loading="lazy"
-          />
-          <img
-            src={middle}
-            alt=""
-            className="phone_bg-image  "
-            loading="lazy"
-          />
-          <img
-            src={right}
-            alt=""
-            className="phone_bg-image   "
-            loading="lazy"
-          />   */}
+      
            <StaticImage
             src="../assets/images/left.svg"
             alt=""

@@ -63,15 +63,21 @@ function WhatBenfit() {
       <Box sx={styles.cardGrid}>
         {items.map((item, index) => (
           <Box key={index} sx={styles.card(index)} 
-          className=" border-[1px]"
+          className=" border-[1px] flex flex-col "
           data-aos={"zoom-in"}
           data-aos-duration="1200" // Custom duration for each card
           data-aos-delay={index * 200} // Delay the animation for each card
           
           >
-            <Image src={item.imgSrc} alt={t(item.titleKey)}  className=" w-[50px]"/>
-            <Text as="h3" className=" py-5 font-bold ">{t(item.titleKey)}</Text>
-            <Text className="  font-light">{t(item.descriptionKey)}</Text>
+            <div className=" flex items-center h-[60px]">
+            <Image src={item.imgSrc} alt={t(item.titleKey)}  className="  w-[50px]"/>
+
+            </div>
+           <div className=" flex-grow">
+
+           <Text as="h3" className=" py-5 font-bold text-lg ">{t(item.titleKey)}</Text>
+           <Text className="  font-light">{t(item.descriptionKey)}</Text>
+           </div>
           </Box>
         ))}
       </Box>

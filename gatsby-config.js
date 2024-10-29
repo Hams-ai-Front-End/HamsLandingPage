@@ -5,16 +5,8 @@ module.exports = {
     author: `team@Hams.AI`,
   },
   plugins: [
-  {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Noto-Sans-Arabic`,
-          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
-        ],
-        display: 'swap'
-      }
-    },
+    
+
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -52,8 +44,12 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+// Add image plugins here
+
+`gatsby-plugin-image`,
+`gatsby-transformer-sharp`,
+`gatsby-plugin-sharp`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

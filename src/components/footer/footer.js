@@ -1,66 +1,61 @@
-/** @jsx jsx */
-import { jsx, Flex, Box, Text, Container } from 'theme-ui';
-import { rgba } from 'polished';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-export default function Footer() {
+
+const Footer = () => {
+  const { t } = useTranslation();
+
   return (
-    <Box as="footer" sx={styles.footer}>
-      <Container>
-        <Flex sx={styles.footerInner}>
-          <Flex sx={styles.copyright}>
-           {/* <Text as="span"><a href="/policyGuest" style={{color:"white"}}>الشروط و الاحكام  للعميل</a></Text> */}
-            <Text as="span">
-              &copy; Copyright by Hams.AI {new Date().getFullYear()}  
-            </Text>
-          </Flex>
-    
-        </Flex>
-      </Container>
-    </Box>
-  );
-}
+    <footer className="bg-[#8485E6] py-8 text-[#ffffff]">
+      <div className="w-full px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8 justify-center items-center">
 
-const styles = {
-  footer: {
-    background: " #8485E6", // Change to background
-    pt: [6],
-    pb: [6],
-    alignItems: 'center',
-    display: 'flex',
-    justifyContent: 'center'
-  },
-  footerInner: {
-    alignItems: 'center',
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: ['column', null, null, null, 'row'],
-  },
-  copyright: {
-    alignItems: 'center',
-    flexDirection: ['column', null, null, null, 'row'],
-    span: {
-      color: rgba('#ffffff', 0.7),
-      fontSize: 1,
-      lineHeight: '18px',
-      ml: [null, null, null, null, 3],
-      mt: [3, null, null, null, 0],
-    },
-  },
-  footerNav: {
-    listStyle: 'none',
-    // flexDirection: ['column', null, null, null, 'row'],
-    m: ['25px 0 0', null, null, null, 0],
-    p: 0,
-    li: {
-      '+ li': {
-        ml: [3, null, null, null, 4],
-      },
-      a: {
-        color: 'white',
-        cursor: 'pointer',
-        textDecoration: 'none',
-        fontSize: [1, null, null, 2],
-      },
-    },
-  },
+          {/* Product Section */}
+          <div>
+            <h3 className="font-semibold mb-4">{t('Product')}</h3>
+            <ul className="space-y-2">
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Speech-to-Text')}</li>
+
+              <li className=" hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Audio Intelligence')} </li>
+              <li className=" transition-colors ease-in-out duration-300">{t('Text-to-Speech')} <span className=' bg-red-500 py-1 text-sm px-5 mx-2 rounded-lg'> {t('soon')}</span></li>
+            </ul>
+          </div>
+
+          {/* Use cases Section */}
+          <div>
+            <h3 className="font-semibold mb-4">{t('Use cases')}</h3>
+            <ul className="space-y-2">
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Customer experience')}</li>
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Sales enablement')}</li>
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Meeting assistants')}</li>
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Media')}</li>
+            </ul>
+          </div>
+
+          {/* Developers Section */}
+          <div>
+            <h3 className="font-semibold mb-4">{t('Developers')}</h3>
+            <ul className="space-y-2">
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Playground')}</li>
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Documentation')}</li>
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Discord')}</li>
+            </ul>
+          </div>
+
+          {/* Resources Section */}
+          <div>
+            <h3 className="font-semibold mb-4">{t('Resources')}</h3>
+            <ul className="space-y-2">
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('About us')}</li>
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Careers')}</li>
+              <li className="hover:text-[#333333] cursor-pointer transition-colors ease-in-out duration-300">{t('Terms & conditions')}</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  );
 };
+
+export default Footer;

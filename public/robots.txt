@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://www.hams.ai
-Host: https://www.hams.ai

@@ -26,22 +26,24 @@ const BannerForm = () => {
                 }}
             >
                 {({ errors, touched }) => (
-                    <Form className=" w-full">
+                    <Form className="w-full">
                         <div className="flex w-full flex-wrap lg:gap-0 justify-center boxanimated items-center">
                             <Field
-                                type="text"
+                                type="tel"
                                 name="phoneNumber"
                                 placeholder={t("EnterPhone")}
+                                onInput={(e) => {
+                                    e.target.value = e.target.value.replace(/\D/g, '');
+                                }}
                                 className={`flex flex-grow rounded-md lg:rounded-e-[0px] lg:h-10 h-8 py-2 px-3 ${errors.phoneNumber && touched.phoneNumber ? 'border-red-500' : ''}`}
                             />
                             <button 
                                 type="submit" 
-                                className="bg-gradient-to-r from-[#21228E] lg:h-10 h-8 to-[#8485E6] text-white py-2 px-4 w-[120px] lg:rounded-s-[0px]  lg:w-auto w-full shadow-lg"
+                                className="bg-gradient-to-r from-[#21228E] lg:h-10 h-8 to-[#8485E6] text-white py-2 px-4 w-[120px] lg:rounded-s-[0px] lg:w-auto w-full shadow-lg"
                             >
                                 {t("call-me")}
                             </button>
                         </div>
-                        {/* Error message displayed here after boxanimated div */}
                         <ErrorMessage name="phoneNumber" component="div" className="text-red-500 text-xs block mt-1" />
                     </Form>
                 )}

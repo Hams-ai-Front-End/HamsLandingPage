@@ -110,10 +110,10 @@ const styles = {
       index === 1 ? "10px 10px 30px 0px #00000012" : // Second card shadow
       "0px 4px 30px 0px #00000012", // Third card shadow
     background: index === 0 
-      ? "linear-gradient(90deg, #3132A9 0.6%, #8485E6 99.52%)" // First card gradient
+      ? "#6162d1"
       : index === 1 
       ? "#FFFFFF" // Second card white
-      : "linear-gradient(90deg, #3132A9 0.6%, #8485E6 99.52%)", // Third card gradient
+      : "#6162d1",
     color: index === 0 
       ? "#FFFFFF" // First card gradient
       : index === 1 

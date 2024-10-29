@@ -4,12 +4,12 @@ import React, { useState, useEffect } from "react";
 import "../assets/styles/banner.scss";
 import { useTranslation } from "react-i18next";
 
-import SliderComponent from "./SliderComponent";
-
-import { rgba } from "polished";
-import { TypeAnimation } from "react-type-animation";
-import blurimg from "../assets/images/blur.png";
 import SliderBanner from "../components/SliderBanner";
+import InfiniteScrollX from "./InfiniteScrollX";
+import img1 from "../assets/images/slider/aws.webp";
+import img2 from "../assets/images/slider/NVIDIA_logo.svg";
+import img3 from "../assets/images/slider/monsha.svg";
+import img4 from "../assets/images/slider/vis.svg";
 
 const Banner = () => {
   const { i18n, t } = useTranslation();
@@ -30,37 +30,36 @@ const Banner = () => {
   }, [i18n]);
 
   return (
-    <section id="home" sx={styles.section} >
-      <div className="lg:mx-24 py-12 lg:py-2  ">
-        <div className="grid justify-center h-full items-center lg:grid-cols-2 grid-cols-1  md:grid-cols-1  p-12">
-          <Box sx={styles.bannerContent} className="relative  lg:min-h-[70vh] flex flex-col   justify-center items- ">
+    <section id="home" sx={styles.section} className=" gradient-bg-header">
+      <div className="lg:mx-24 py-12 lg:py-2   ">
+        <div className="grid justify-center h-full items-center xl:grid-cols-2 grid-cols-1  md:grid-cols-1 sm:grid-cols-1 ">
+          <Box
+            sx={styles.bannerContent}
+            className="relative md:mt-12 xl:mt-4  flex flex-col p-8 pb-0  items-start   justify-start   "
+          >
             {" "}
             {/* Add relative here */}
-            <div className=" my-2 shadow-custom px-1 py-2 text-center  rounded-3xl bg-white text-sm ">
+            <div className=" my-2 shadow-custom px-1 py-2 text-start ps-5  rounded-3xl bg-white text-sm ">
               {t("sub-title-banner")}{" "}
             </div>
             {/* Text container */}
-            <div className="ar" style={{ position: "relative", zIndex: 1 }}>
+            <div>
               {" "}
               {/* Ensure text is above image */}
-              <h1 id="main-title" style={{ lineHeight: "1" }}>
-                <span
-                  className=" text-black gradient-text"
-                  style={{ fontWeight: "800" }}
-              
-                >
+              <h1 style={{ lineHeight: "1" }}>
+                <span className=" text-black gradient-text">
+                  <span className="  lg:text-[32px] text-[22px] font-[900]  leading-10">
+                    {" "}
+                    {subHeaderText}
+                  </span>
 
-                <span className=" px-2 lg:text-[32px] text-[22px] font-[900]  leading-10">  {subHeaderText}</span>
-              
-             
-           <span className="text-[#8485E6] lg:text-[32px] text-[22px] font-[900]   leading-10">{ t('banner_word1')} </span>
-           
-                
-              
+                  <span className="text-[#8485E6] lg:text-[32px] text-[22px] font-[900]   leading-10">
+                    {t("banner_word1")}{" "}
+                  </span>
                 </span>
               </h1>
               <p
-                className="hjz-introduction lg:block md:bolck sm:block hidden"
+                className=" lg:block md:bolck sm:block hidden"
                 style={{
                   fontSize: "1em",
                   margin: "0",
@@ -70,30 +69,42 @@ const Banner = () => {
               >
                 {t("Description-hjz")}
               </p>
-              <button className="bg-gradient-to-r from-[#5253B9] to-[#8485E6] text-white py-2 px-4 w-[120px] mt-6 rounded-2xl shadow-lg">
-             {t("Join-us")}  
-              </button>
             </div>
             {/* Background image */}
-            <img
-              src={blurimg}
-              alt="blur"
-              className="absolute top-[-90px] start-[-120px] h-[300px] w-[300px] opacity-50"
-              style={{ zIndex: 0 }} // Ensure the image is behind the text
-            />
           </Box>
 
-          <div className="  relative   h-full">
-            <SliderBanner />
-
+          <div className=" lg:flex w-full justify-center">
+            <div className="  relative  flex-col items-center  justify-center p-7 pt-1 lg:w-[80%] sm:w-[85%] md:w-[85%]   xl:w-[95%] mt-[10%] h-full">
+              <SliderBanner />
+            </div>
           </div>
         </div>
         <div>
           <h3 className="title-know-more">{t("know-more-title")}</h3>
         </div>
-       
       </div>
-      <SliderComponent />
+
+      {/* <SliderComponent /> */}
+      <InfiniteScrollX
+        images={[
+          { id: 1, src: img1, alt: "Image 1" },
+          { id: 2, src: img2, alt: "Image 2" },
+          { id: 3, src: img3, alt: "Image 3" },
+          { id: 4, src: img4, alt: "Image 4" },
+          { id: 5, src: img1, alt: "Image 5" },
+          { id: 6, src: img2, alt: "Image 6" },
+          { id: 7, src: img1, alt: "Image 7" },
+          { id: 8, src: img2, alt: "Image 8" },
+          { id: 9, src: img1, alt: "Image 1" },
+          { id: 10, src: img2, alt: "Image 2" },
+          { id: 11, src: img3, alt: "Image 3" },
+          { id: 12, src: img4, alt: "Image 4" },
+          { id: 13, src: img1, alt: "Image 5" },
+          { id: 14, src: img2, alt: "Image 6" },
+          { id: 15, src: img1, alt: "Image 7" },
+          { id: 16, src: img2, alt: "Image 8" },
+        ]}
+      />
     </section>
   );
 };
@@ -106,9 +117,6 @@ const styles = {
   },
 
   bannerContent: {
-    margin: [null, null, null, "0 auto", 0],
-    maxWidth: [null, null, null, 600, "none"],
-    textAlign: [null, null, null, "center", "left"],
     h1: {
       fontWeight: 700,
       fontSize: [8, null, null, 10, 45, null, 12, 14],
@@ -124,64 +132,9 @@ const styles = {
       fontSize: [1, null, null, 2, 3],
       lineHeight: [1.5, null, null, 2, null, 2.33],
       color: "textSecondary",
-      maxWidth: [470],
+
       m: [null, null, null, "30px auto", 0],
       mt: [3, null, null, null, 5],
     },
-  },
-  subscriptionForm: {
-    justifyContent: "center",
-    maxWidth: [null, null, null, 470, "none"],
-    m: [null, null, null, "30px auto", "30px 0 0"],
-    mt: [6],
-    input: {
-      outLine: "none",
-      backgroundColor: "#FFFFFF",
-      border: "0 none",
-      borderColor: "#FFFFFF",
-      borderRadius: "0",
-      borderBottom: "2px solid rgba(0, 0, 51, 0.7)",
-      fontFamily: "body",
-      fontSize: [1, null, null, null, 2],
-      px: [5],
-      "::placeholder": {
-        color: rgba("#02073E", 0.4),
-        opacity: 1,
-      },
-      "::input:focus": {
-        outLine: "none",
-      },
-    },
-    button: {
-      fontSize: [0, 1, null, null, 2],
-      minHeight: [40, 50, null, null, null, 60],
-    },
-  },
-  sponsoredBy: {
-    alignItems: "center",
-    maxWidth: [null, null, null, 470, "none"],
-    m: [null, null, null, "30px auto", "30px 0 0"],
-    mt: [6],
-    span: {
-      fontSize: ["13px", null, null, null, 2],
-      lineHeight: 2.62,
-      color: rgba("#566272", 0.6),
-    },
-  },
-  sponsor: {
-    alignItems: "center",
-    figure: {
-      ml: [2, null, null, null, 4, 5],
-      img: {
-        maxWidth: ["60px", null, null, null, "80px", "100%"],
-      },
-    },
-  },
-  bannerImage: {
-    width: "100%",
-    height: "100%",
-    alignItems: "center",
-    maxWidth: "800px",
-    mt: [0, null, null, null, 0],
   },
 };

@@ -20,10 +20,10 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
       }
 
     })
-    console.log(formData);
+
 
     if(elementsArray[0].value === "" || elementsArray[1].value === ""){
-      // console.log("Please, all field is required ^_^")
+  
       swal({
         title:t("request-title-invalid"),
         text:t("request-text-invalid"),
@@ -37,7 +37,7 @@ const SubscriptionForm = ({ buttonLabel, ...props }) => {
         .then(() => {
           //done
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(" "))
         swal({
           title:t("request-title-successful"),
           text:t("request-text-successful"),

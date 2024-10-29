@@ -53,13 +53,13 @@ const PremiumFeature = () => {
               <h1 className="text-[36px] py-3 text-[#000000] font-[800]">
                 {t("Any-questions")}
               </h1>
-              <h3 className="text-[36px] py-2 font-bold">
+              <h3 className="text-[36px] py-2 font-normal">
                 {t("Any-questions_reply")}
               </h3>
               <p>Lorem ipsum dolor sit amet, sed do</p>
             </div>
           </div>
-          <div className=" z-50">      <AccordionList sections={data} /></div>
+          <div className=" z-20">      <AccordionList sections={data} /></div>
           <div>
       
           </div>

@@ -1,3 +1,4 @@
+
 const theme = {
   // example colors with dark mode
   //   Here is the color you requested:
@@ -29,11 +30,11 @@ const theme = {
     },
   },
   fonts: {
-    body: "DM Sans, sans-serif",
+    body: "Poppins !important",
     // body:
-    //   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "DM Sans, sans-serif",
-    monospace: "Menlo, monospace",
+    //   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue"',
+    heading: "Poppins !important" ,
+
   },
   fontSizes: [
     12, // 0
@@ -299,12 +300,12 @@ const theme = {
     },
     // h1-h6 Heading styles
     h1: {
-      fontFamily: "noto-sans-arabic-bold",
+      fontFamily: "Poppins",
       // variant: 'text.heading',
       // fontSize: 6,
     },
     h2: {
-      fontFamily: "noto-sans-arabic-bold",
+      fontFamily: "Poppins",
       // variant: 'text.heading',
       // fontSize: 5,
     },

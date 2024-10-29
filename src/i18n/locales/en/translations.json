@@ -5,6 +5,28 @@
   "How it work?": "Solutions",
   "whatHams": " What Is The benfit Behind It…",
   "FAQs": "FAQs",
+    "use_case":"Use case",
+  "Product": "Product",
+  "soon":"soon",
+  "Speech-to-Text": "Speech-to-Text",
+  "Real-Time Streaming": "Real-Time Streaming",
+  "Speech-to-text": "Speech-to-text",
+  "Text-to-Speech":"Text to Speach",
+  "Audio Intelligence": "Audio Intelligence",
+  "Use cases": "Use cases",
+  "Customer experience": "Customer experience",
+  "Sales enablement": "Sales enablement",
+  "Meeting assistants": "Meeting assistants",
+  "Media": "Media",
+  "Developers": "Developers",
+  "Playground": "Playground",
+  "Documentation": "Documentation",
+  "Discord": "Discord",
+  "Resources": "Resources",
+  "About us": "About us",
+  "Careers": "Careers",
+  "Terms & conditions": "Terms & conditions",
+
   "hjz": "Hams.AI",
   "product":"Products",
   "poweredby":"Powered By",
@@ -20,7 +42,7 @@
   "Any_questions": "Any questions",
   "Any-questions_reply": "We got you.",
   "OUR_MISSION_text": "Helps companies build full stack ‘voice agents’ to answer phone calls without human interaction",
-  "sub-title-banner": "#1 AI Voice Agent enables companies to build full-stack voice agents for handling calls without human interaction ",
+  "sub-title-banner": "#1 AI Voice Agent enables companies to build full-stack voice agents for handling calls  ",
   "ONE-STOP-SHOP": "Turn voice data into insights with our leading Speech AI models.",
   "banner_word1": "No human intervention",
   "banner_word2": "Supports Saudi dialects",
@@ -46,9 +68,9 @@
   "It-Work": "Foundations",
   "UseCaseTitle": "B2B AGENTS: USE CASES AND SOLUTIONS",
   "extra_conversational_engine": "Extra Conversational Engine",
-  "call_centers": "Call Centers",
+
   "streaming": "Streaming",
-  "virtual_meetings": "Virtual Meetings",
+ 
   "content_media": "Content & Media",
   "workplace_collaboration": "Workplace Collaboration",
   "emotion_engine": "Emotion Engine",
@@ -147,5 +169,126 @@
         "description": "Want to automatically transfer to a human? Book a meeting? Send AI texts? Update a CRM? Simply drop your preferred tool into Hams, and we’ll handle the integration seamlessly."
       }
     ]
-  }
+  },
+
+
+
+  
+    "itemSlider": [
+      {
+        "title": "Receptionist",
+        "prompt": "Hi, I'm Nora, a Gym Receptionist. I use an AI-powered phone agent to answer customer questions 24/7 in a natural Saudi dialect. Call me and see if I sound like a human!"
+      },
+      {
+        "title": "Customer Service",
+        "prompt": "Hi, I'm Ahmed, your Customer Service Agent. I'm available 24/7 to answer your inquiries using AI technology. Feel free to call and experience our seamless service."
+      },
+      {
+        "title": "Appointment",
+        "prompt": "Hi, I'm Sara, an AI Appointment Setter. I can help you schedule and remind you of appointments in no time, available 24/7 with a personal touch."
+      },
+      {
+        "title": "Survey",
+        "prompt": "Hi, I'm Faisal, your Survey Assistant. I conduct quick and accurate surveys in a conversational Saudi dialect, powered by AI. Call me to provide your feedback!"
+      },
+      {
+        "title": "Debt Collection",
+        "prompt": "Hi, I'm Khalid, an AI Debt Collection Agent. I work around the clock to remind customers about their outstanding payments in a friendly tone. Contact me anytime!"
+      },
+      {
+        "title": "Lead Qualification",
+        "prompt": "Hi, I'm Layla, an AI Lead Qualifier. I can help you identify and qualify leads efficiently using AI technology. Let's connect and grow your business."
+      }
+    ],
+    "badge__Product_header":"Speech to Text ",
+      "title_Product_header": "The most powerful Speech to Text API in Arabic ",
+      "description_Product_header": "Power your apps with world-class speech recognition. Everything developers need to build with confidence and ship faster. Unmatched performance guaranteed",
+      "button_Product_Header": "Contact Sales",
+      "faster_text": "Accuracy",
+      "faster_desc": " Achieve a 16% lower Word Error Rate (WER) with high accuracy in Saudi dialect transcription.",
+      "latency_text": "< 300ms latency",
+      "latency_desc": "Deliver the fastest real-time transcription speeds for seamless conversational AI experiences and real-time analytics",
+      "accuracy_text": "> 90% accuracy",
+      "accuracy_desc": " Achieve a 16% lower Word Error Rate (WER) with high accuracy in Saudi dialect transcription.",
+    
+    
+
+"useCases": {
+    "title": "Use Cases",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lsed do eiusmod tempor incidit ut",
+    "callCenters": {
+      "title": "Call centers",
+      "description": "Improve customer service, streamline operations, and ensure compliance with regulatory requirements."
+    },
+    "virtualMeetings": {
+      "title": "Virtual meetings",
+      "description": "Make your virtual meetings efficient, productive, and secure. Save time and improve customer service."
+    },
+    "contentMedia": {
+      "title": "Content & media",
+      "description": "Create, edit, and distribute audio and video content more efficiently."
+    },
+    "workplaceCollaboration": {
+      "title": "Workplace collaboration",
+      "description": "Enhance collaboration across departments, streamline operations, and improve knowledge management."
+    }
+  },
+  
+  "productPowerful": {
+    "title": "The most powerful",
+    "subtitle": "speech to text",
+    "accuracy": {
+      "title": "Accuracy",
+      "description": "Hams.AI leads the industry with the most accurate Arabic models in the market across use case categories"
+    },
+    "cost": {
+      "title": "Cost",
+      "description": "3-6x more cost-effective than alternatives, providing industry-leading accuracy without the high costs"
+    },
+    "lowCode": {
+      "title": "Low-code/No-code for development",
+      "description": "Build your AI Voice Agents in minutes without hiring AI Engineers"
+    },
+    "speed": {
+      "title": "Simple and secure",
+      "description": "Simple, secure, and fully compliant data hosting in KSA, easily integrated with any tech stack."
+    }
+  },
+  
+    "optimized_for_enterprise": "Optimized for enterprise use cases",
+    "call_centers": {
+      "title": "Call centers",
+      "description": "Enhance customer service, streamline operations, and ensure compliance with regulations."
+    },
+    "transcript_languages": {
+      "title": "Transcript languages",
+      "description": "Hams.AI supports 99+ languages, with a focus on specialized Arabic transcription and seamless language switching."
+    },
+    "media_content_creation": {
+      "title": "Media & Content Creation",
+      "description": "Transcribe interviews, podcasts, or videos to create written content, subtitles to increase productivity."
+    },
+    "virtual_meetings": {
+      "title": "Virtual meetings",
+      "description": "Automatically transcribe meetings or virtual conferences, providing searchable, detailed records and enabling easy review and analysis."
+    },
+    "learn_more": "Learn more",
+    
+      "performance_rate_title": "Setting a new performance rate in ASR",
+      "performance_rate_description": "Hams.AI’s Speech-to-Text goes beyond just accuracy—it's built to adapt to real-world audio, delivering reliable transcriptions even in noisy environments. Test it with your data and experience how it enhances your workflow effortlessly.",
+      "unmatched_language_precision": {
+        "title": "Unmatched Language Precision",
+        "content": "Our ASR models are finely tuned to capture the nuances of Arabic, Saudi dialects, offering unparalleled accuracy for GCC languages."
+      },
+      "rapid_transcription": {
+        "title": "Rapid Transcription",
+        "content": "With transcription speeds that process hours of audio in just minutes, Hams.AI sets a new benchmark for efficiency."
+      },
+      "optimized_for_real_world_noises": {
+        "title": "Optimized for Real-World Noises",
+        "content": "Designed to perform exceptionally in noisy environments, ensuring reliable transcription in diverse settings like call centers and public spaces."
+      }
+    
+  
+  
 }

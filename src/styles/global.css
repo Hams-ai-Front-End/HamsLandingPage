@@ -2,10 +2,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* global.css or index.css */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
+       url('../assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Cairo';
+  src: url('../assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf') format('truetype');
+
+  font-weight: 400;
+  font-style: normal;
+}
 html,
 body {
   height: 100%;
+  font-family: 'Poppins' !important;
 }
 
 .slider {
@@ -57,9 +73,10 @@ body {
   inherits: false;
 }
 .cover-bg {
-  background-image: url("../assets/images/mobileframe.svg");
-  background-size: cover;
-  background-repeat: cover;
+  background-image: url("../assets/images/mobiles.svg");
+
+background:cover;
+
 }
 .box {
   @apply relative  rounded-xl; /* Main box styles */
@@ -75,68 +92,35 @@ body {
   @apply absolute w-12 h-12 -bottom-1 -left-1 border-b-4 border-l-4 border-[#5253B9] rounded-bl-xl; /* Bottom-left corner */
 }
 
-.call-buton .cc-calto-action-ripple {
-  z-index: 99999;
-  right: 1rem;
-  bottom: 8rem;
-  background: #5253B9; /* Updated color */
-  width: 3.3rem;
-  height: 3.3rem;
-  padding: 1rem;
-  border-radius: 100%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #ffffff;
-  -webkit-animation: cc-calto-action-ripple 0.6s linear infinite;
-  animation: cc-calto-action-ripple 0.6s linear infinite;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  justify-items: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-decoration: none; 
-}
-
-.call-buton .cc-calto-action-ripple i {
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-  font-size: 2.2rem; 
-}
-
-.call-buton .cc-calto-action-ripple:hover i {
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg); 
-}
-
-@-webkit-keyframes cc-calto-action-ripple {
+/* Add these styles to your global.css or component's CSS */
+@keyframes slideUp {
   0% {
-      -webkit-box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 0 rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2);
-      box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 0 rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2);
+    transform: translateY(46%);
+    opacity: 0;
   }
   100% {
-      -webkit-box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2), 0 0 0 20px rgba(82, 83, 185, 0);
-      box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2), 0 0 0 20px rgba(82, 83, 185, 0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-@keyframes cc-calto-action-ripple {
-  0% {
-      -webkit-box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 0 rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2);
-      box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 0 rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2);
-  }
-  100% {
-      -webkit-box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2), 0 0 0 20px rgba(82, 83, 185, 0);
-      box-shadow: 0 4px 10px rgba(82, 83, 185, 0.2), 0 0 0 5px rgba(82, 83, 185, 0.2), 0 0 0 10px rgba(82, 83, 185, 0.2), 0 0 0 20px rgba(82, 83, 185, 0);
-  }
+.slide-up {
+  animation: slideUp 1s ease-out;
 }
 
-span.num {
-  position: absolute;
-  color: #5253B9; /* Updated color */
-  left: -30%;
-  bottom: -50%;
+.gradient-text-header {
+  background: linear-gradient(90deg, #3132A9, #8485E6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.gradient-bg-header{
+  background: linear-gradient(180deg, rgba(132, 133, 230, 0.17) 11.05%, rgba(49, 50, 169, 0.17) 29.05%, rgba(255, 255, 255, 0.17) 90.05%);
+
+}
+.gradient-shadow-bg{
+  box-shadow: 0px 4px 20px rgba(132, 133, 230, 0.17), 0px 4px 20px rgba(49, 50, 169, 0.17), 0px 4px 20px rgba(255, 255, 255, 0.17);
+
 }

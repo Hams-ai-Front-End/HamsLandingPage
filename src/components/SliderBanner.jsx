@@ -1,208 +1,108 @@
-import React, { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import "../styles/global.css";
-import banner from "../assets/images/mobileframe.svg";
+import { StaticImage } from "gatsby-plugin-image";
+import { TypeAnimation } from "react-type-animation";
 import BannerForm from "./BannerForm";
 import HeaderMobileBanner from "./HeaderMobileBanner";
-import { TypeAnimation } from "react-type-animation";
+import SliderButton from "./ButtonSlider";
 import pin from "../assets/images/pinss.svg";
-// JSON data for items in English and Arabic
-const items = {
-  en: [
-    {
-      title: "Receptionist",
-      prompt:
-        "Hi, I'm Nora, a Gym Receptionist. I use an AI-powered phone agent to answer customer questions 24/7 in a natural Saudi dialect. Call me and see if I sound like a human!",
-    },
-    {
-      title: "Customer Service",
-      prompt:
-        "Hi, I'm Ahmed, your Customer Service Agent. I'm available 24/7 to answer your inquiries using AI technology. Feel free to call and experience our seamless service.",
-    },
-    {
-      title: "Appointment ",
-      prompt:
-        "Hi, I'm Sara, an AI Appointment Setter. I can help you schedule and remind you of appointments in no time, available 24/7 with a personal touch.",
-    },
-    {
-      title: "Survey",
-      prompt:
-        "Hi, I'm Faisal, your Survey Assistant. I conduct quick and accurate surveys in a conversational Saudi dialect, powered by AI. Call me to provide your feedback!",
-    },
-    {
-      title: "Debt Collection",
-      prompt:
-        "Hi, I'm Khalid, an AI Debt Collection Agent. I work around the clock to remind customers about their outstanding payments in a friendly tone. Contact me anytime!",
-    },
-    {
-      title: "Lead Qualification",
-      prompt:
-        "Hi, I'm Layla, an AI Lead Qualifier. I can help you identify and qualify leads efficiently using AI technology. Let's connect and grow your business.",
-    },
-  ],
-  ar: [
-    {
-      title: "الاستقبال",
-      prompt:
-        "مرحبًا، أنا نورة، موظفة استقبال في النادي الرياضي. أستخدم وكيل هاتف مدعوم بالذكاء الاصطناعي للإجابة على استفسارات العملاء 24/7 بلهجة سعودية طبيعية. اتصل بي وجرب بنفسك إذا كان صوتي يبدو بشريًا!",
-    },
-    {
-      title: "خدمة العملاء",
-      prompt:
-        "مرحبًا، أنا أحمد، وكيل خدمة العملاء. أنا متاح للإجابة على استفساراتكم 24/7 باستخدام تقنية الذكاء الاصطناعي. لا تترددوا في الاتصال لتجربة خدمتنا السلسة.",
-    },
-    {
-      title: "تذكير بالمواعيد",
-      prompt:
-        "مرحبًا، أنا سارة، وكيلة تحديد المواعيد بالذكاء الاصطناعي. أستطيع مساعدتك في جدولة وتذكيرك بالمواعيد بسهولة، متاحة على مدار الساعة.",
-    },
-    {
-      title: "الاستبيان",
-      prompt:
-        "مرحبًا، أنا فيصل، مساعدك في الاستبيانات. أجري استبيانات سريعة ودقيقة بلهجة سعودية طبيعية باستخدام الذكاء الاصطناعي. اتصل بي وشارك رأيك!",
-    },
-    {
-      title: "تحصيل الديون",
-      prompt:
-        "مرحبًا، أنا خالد، وكيل تحصيل الديون بالذكاء الاصطناعي. أعمل على مدار الساعة لتذكير العملاء بالمدفوعات المستحقة بطريقة ودية. اتصل بي في أي وقت!",
-    },
-    {
-      title: "تأهيل العملاء ",
-      prompt:
-        "مرحبًا، أنا ليلى، أعمل على تأهيل العملاء المحتملين بالذكاء الاصطناعي. أستطيع مساعدتك في تحديد  العملاء المحتملين بسرعة وكفاءة. دعنا نتواصل  !",
-    },
-  ],
-};
-
+import left from "../assets/images/left.svg"
+import middle from "../assets/images/middle.svg"
+import right from "../assets/images/right.svg"
 function SliderBanner() {
-  const [selectedId, setSelectedId] = useState(1); // State to track selected button
-  const { i18n, t } = useTranslation(); // Get the i18n instance
-
-  // Determine the language based on the current language set in i18n
-  const currentLanguage = i18n.language === "ar" ? "ar" : "en";
-  const currentItems = items[currentLanguage];
-
-  // Get the selected item based on the selected index
+  const [selectedId, setSelectedId] = useState(1);
+  const [isImageLoaded, setIsImageLoaded] = useState(true);
+  const { t } = useTranslation();
+  const currentItems = t("itemSlider", { returnObjects: true });
   const selectedItem = currentItems[selectedId];
 
-  const settings = {
-    dots: true,
-    speed: 500,
-    slidesToShow: currentLanguage === "ar" ? 3 : 2.6, // Adjust based on language,
-    slidesToScroll: 3,
-    autoplaySpeed: 1000,
-    centerMode: true,
-    centerPadding: "0px", // Remove side padding to make sharp edges
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: currentLanguage === "ar" ? 3.5 : 3, // Adjust based on language,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1.7,
-          slidesToScroll: 1,
-          centerMode: false,
-        },
-      },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 1.7,
-          slidesToScroll: 1,
-          centerMode: false,
-        },
-      },
-    ],
-  };
+  const handleSelectId = useCallback((index) => {
+    setSelectedId(index);
+  }, []);
 
   return (
-    <div className="flex flex-col  h-full relative md:mx-16  lg:mx-16">
-      {/* Outer wrapper with overflow-hidden */}
-      <div className="p-0 w-full rounded-[60px] faded-edges 0  lg:mt-12 md:mt-12">
-        <div className="z-1  rounded-[60px] lg:pt-0">
-          {/* Slider with sharp left and right edges */}
-          <Slider {...settings} className="mt-0 rounded-[60px]">
-            {currentItems.map((item, index) => (
-              <button
-                key={index}
-                className="flex justify-center  rounded-[60px]  slider items-center h-12 w-full"
-                onClick={() => setSelectedId(index)} // Set selected index on click
-                style={{ "border-radius": "60px" }}
-              >
-                <span
-                  className={`rounded-full w-full py-1 h-full px-6 shadow-custom
-                  ${
-                    selectedId === index
-                      ? "bg-gradient-to-r text-white from-[#5253B9] to-[#8888C4]"
-                      : "bg-white text-black border"
-                  }`} // Change color based on selection
-                >
-                  {item.title}
-                </span>
-              </button>
-            ))}
-          </Slider>
-        </div>
+    <div className="flex flex-col h-full relative md:mx-16 lg:mx-16">
+      <div className="p-0 w-full rounded-[60px] faded-edges lg:mt-12 md:mt-12">
+        <SliderButton
+          currentItems={currentItems}
+          selectedId={selectedId}
+          handleSelectId={handleSelectId}
+        />
       </div>
 
-      <div className="relative items-center  lg:mx-4 md:mx-24 mt-8">
-        {/* Container for image and text */}
-        <div className="relative   flex justify-center">
-          <img
-            src={banner}
-            alt="categories"
-            className="flex w-full   justify-center object-fit"
+      <div className="relative mt-7 banner-div overflow-hidden flex justify-center slide-up transition-opacity duration-300">
+    
+        <div
+          className="z-0 gap-x-0 gap-y-0 grid-rows-[auto_auto] grid-cols-[9fr_23fr_11fr] auto-cols-fr w-full min-h-full grid absolute inset-x-0 "
+          dir="ltr"
+        >
+            {/* <img
+            src={left}
+            alt=""
+            className="phone_bg-image  "
+            loading="lazy"
           />
-          {/* Text inside the image */}
-          <div className="absolute  inset-0 flex flex-col mb-[8px] mt-[30px] lg:my-[40px] lg:mx-10 md:mx-16 mx-6 max-h-[100%]  items-center text-xs   justify-center text-start text-black ">
-            <div className="md:text-[14px] text-[10px] lg:text-[14px] lg:h-full md:h-[200px] min-h-[100px] border-[2px]  bg-[#F8F8FA] pb-3 w-full   rounded-lg">
-              {selectedItem ? (
-                <div>
-                  <div>
-                    <HeaderMobileBanner />
-                    <hr />
-                  </div>
+          <img
+            src={middle}
+            alt=""
+            className="phone_bg-image  "
+            loading="lazy"
+          />
+          <img
+            src={right}
+            alt=""
+            className="phone_bg-image   "
+            loading="lazy"
+          />   */}
+           <StaticImage
+            src="../assets/images/left.svg"
+            alt=""
+            className="phone_bg-image "
+            placeholder="none"  // Disable placeholder
+            loading="lazy"
+          />
+          <StaticImage
+            src="../assets/images/middle.svg"
+            alt=""
+            className="phone_bg-image "
+            placeholder="none"  // Disable placeholder
+            loading="lazy"
+          />
+          <StaticImage
+            src="../assets/images/right.svg"
+            alt=""
+            className="phone_bg-image "
+            placeholder="none"  // Disable placeholder
+            loading="lazy"
+          />  
+        </div>
 
-                  <p className=" pt-3 lg:px-4 md:px-4 px-1">
-                    {i18n.language === "ar" ? (
-                      <TypeAnimation
-                        key={selectedItem.prompt} // This forces re-render when prompt changes
-                        sequence={[selectedItem.prompt, 0]}
-                        repeat={0}
-                        omitDeletionAnimation={true}
-                      />
-                    ) : (
-                      <TypeAnimation
-                        key={selectedItem.prompt} // This forces re-render when prompt changes
-                        sequence={[selectedItem.prompt, 0]}
-                        repeat={0}
-                        omitDeletionAnimation={true}
-                      />
-                    )}
-                  </p>
-                </div>
-              ) : (
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-              )}
-            </div>
-            <div>
-              {" "}
-              <img src={pin} alt="pin" className=" z-50  md:h-[40px] h-[30px] lg:h-[40px]" />{" "}
-            </div>
-            <div className="w-full">
-              {" "}
-              <BannerForm />
-            </div>
+        <div className="content-img z-20 mt-12 flex flex-col mb-[8px] w-full lg:my-[40px] max-w-[80%] items-center text-xs justify-center text-start text-black">
+          <div className="md:text-[14px] mt-4 text-[10px] bg-[#F8F8FA] lg:text-[14px] lg:min-h-[210px] md:h-[160px] min-h-[100px] border-[2px]  pb-3 w-full rounded-lg">
+            {selectedItem ? (
+              <>
+                <HeaderMobileBanner />
+                <hr />
+                <p className="pt-3 lg:px-4 md:px-4 px-1">
+                  <TypeAnimation
+                    key={selectedItem.prompt}
+                    sequence={[selectedItem.prompt, 0]}
+                    repeat={0}
+                    omitDeletionAnimation={true}
+                  />
+                </p>
+              </>
+            ) : (
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            )}
+          </div>
+          <img
+            src={pin}
+            alt="Pin"
+            className="z-50 md:h-[40px] h-[30px] lg:h-[40px]"
+          />
+          <div className="w-full">
+            <BannerForm />
           </div>
         </div>
       </div>

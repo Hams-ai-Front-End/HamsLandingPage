@@ -1,105 +1,122 @@
-/** @jsx jsx */
+import React from "react";
 import { jsx } from "theme-ui";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
-import { Link } from "react-scroll"; // Importing Link from react-scroll
+import { useState, useEffect } from "react";
+import { Link as ScrollLink, scroller } from "react-scroll";
+import { Link as GatsbyLink, navigate } from "gatsby"; // Import Gatsby's Link and navigate
 import Logo from "components/logoHeader";
 import "../../i18n/config";
 import Subitem from "../cards/Subitem";
-import {
-  MdOutlineKeyboardArrowDown,
-  MdOutlineKeyboardArrowUp,
-} from "react-icons/md";
+import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
-  const [currentLang, setCurrentLang] = useState("ar");
+  const [currentLang, setCurrentLang] = useState(i18n.language);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState(null); // State for hovered menu item
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const menuItems = [
+    { name: "Home", anchor: "/", subItem: false, isHome: true },
+    { name: "product", anchor: "", subItem: true },
+    { name: "FAQs", anchor: "FAQs", subItem: false },
+    { name: "How it work", anchor: "HowUseIt", subItem: false },
+  ];
+  
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  
+  useEffect(() => {
+    const initialLang = i18n.language;
+    document.documentElement.setAttribute("lang", initialLang);
+    document.body.style.direction = initialLang === "ar" ? "rtl" : "ltr";
+  }, []);
 
   const changeLanguage = async () => {
-    const mainMenu = document.getElementById("main-menu");
     const newLang = currentLang === "en" ? "ar" : "en";
-
     await i18n.changeLanguage(newLang);
 
-    if (mainMenu) {
-      mainMenu.style.direction = newLang === "ar" ? "rtl" : "ltr";
-    }
     document.documentElement.setAttribute("lang", newLang);
     document.body.style.direction = newLang === "ar" ? "rtl" : "ltr";
     setCurrentLang(newLang);
   };
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+  const handleScrollLinkClick = (anchor) => {
+    if (window.location.pathname !== "/") {
+      // Navigate to the homepage first if on a different page
+      navigate("/");
+      
+      // Add a short delay to ensure the navigation completes before scrolling
+      setTimeout(() => {
+        scroller.scrollTo(anchor, {
+          smooth: true,
+          duration: 500,
+        });
+      }, 300);
+    } else {
+      // Scroll directly if already on the homepage
+      scroller.scrollTo(anchor, {
+        smooth: true,
+        duration: 500,
+      });
+    }
   };
 
-  const menuItems = [
-    { name: "Home", anchor: "home", subItem: false },
-    { name: "product", anchor: "", subItem: true },
-    { name: "OUR_MISSION", anchor: "OUR_MISSION", subItem: false },
-    { name: "FAQs", anchor: "FAQs", subItem: false },
-    { name: "How it work", anchor: "HowUseIt", subItem: false },
-  ];
-
-  const renderMenuItems = (isMobile = false) =>
+  const renderMenuItems = () =>
     menuItems.map((item) => (
       <li
         key={item.anchor}
         className="relative group"
-        onMouseEnter={() => setHoveredItem(item.anchor)} // Set hovered item
-        onMouseLeave={() => setHoveredItem(null)} // Reset hovered item on leave
+        onMouseEnter={() => setHoveredItem(item.anchor)}
+        onMouseLeave={() => setHoveredItem(null)}
       >
-        <Link
-          to={item.anchor}
-          smooth
-          duration={500}
-          activeClass="active"
-          className="  transition duration-300 cursor-pointer "
-        >
-        <span className="flex items-center text-gray-700 hover:text-[#5253B9]">
-        {t(item.name)}
-          {item.subItem ? (
-            hoveredItem === item.anchor ? (
-              <MdOutlineKeyboardArrowUp className="ml-2" />
-            ) : (
-              <MdOutlineKeyboardArrowDown className="ml-2" />
-            )
-          ) : null}
-        </span>
+        {item.isHome ? (
+          <GatsbyLink to={item.anchor} className="transition duration-300 cursor-pointer">
+            <span className="flex items-center text-gray-700 hover:text-[#5253B9]">
+              {t(item.name)}
+            </span>
+          </GatsbyLink>
+        ) : (
+          <span
+            onClick={() => handleScrollLinkClick(item.anchor)}
+            className="transition duration-300 cursor-pointer"
+          >
+            <span className="flex items-center text-gray-700 hover:text-[#5253B9]">
+              {t(item.name)}
+              {item.subItem ? (
+                hoveredItem === item.anchor ? (
+                  <MdOutlineKeyboardArrowUp className="ml-2" />
+                ) : (
+                  <MdOutlineKeyboardArrowDown className="ml-2" />
+                )
+              ) : null}
+            </span>
 
-              {/* Display Subitem on hover */}
-        {item.subItem && hoveredItem === item.anchor && (
-          <div className="">
-            <Subitem />
-          </div>
+            {item.subItem && hoveredItem === item.anchor && (
+              <div className="">
+                <Subitem />
+              </div>
+            )}
+          </span>
         )}
-        </Link>
-
-    
       </li>
     ));
 
   return (
-    <div className="fixed w-full z-50 backdrop-blur-md bg-white/60">
+    <div className="fixed w-full z-50 backdrop-blur-md bg-transparent">
       <nav className="flex justify-between lg:mx-24 mx-6 py-5">
-        <Logo />
-
-        {/* Mobile menu button */}
+        <GatsbyLink to={'/'} className="cursor-pointer">
+          <Logo />
+        </GatsbyLink>
+        
         <button className="block lg:hidden text-2xl" onClick={toggleSidebar}>
-          &#9776; {/* Menu icon */}
+          &#9776;
         </button>
 
-        {/* Desktop menu */}
-        <ul
-          id="main-menu"
-          className={`hidden lg:flex items-center gap-12 justify-center`}
-        >
+        <ul id="main-menu" className={`hidden lg:flex items-center gap-12 justify-center`}>
           {renderMenuItems()}
         </ul>
 
-        {/* Desktop button group */}
         <div className="button-group hidden lg:flex gap-5 items-center">
           <button className="bg-[#5253B9] shadow-xl text-white w-[100px] py-1 rounded-3xl">
             {t("Signup")}
@@ -113,27 +130,20 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Sidebar for mobile */}
       <div
-        className={`lg:hidden h-[100vh] fixed inset-0 bg-black bg-opacity-50 transition-transform duration-300 ${
+        className={`lg:hidden min-h-[100vh]  fixed inset-0 bg-black bg-opacity-50 transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
         onClick={toggleSidebar}
-        
       >
         <div
-          className="bg-white flex  flex-col w-64 h-full p-5"
-          onClick={(e) => e.stopPropagation()} // Prevent sidebar close on click inside
+          className="bg-white flex flex-col w-64 h-full p-5"
+          onClick={(e) => e.stopPropagation()}
         >
-          {/* Sidebar menu */}
-          <ul
-            id="main-menu-mobile"
-            className={`flex flex-col w-full    flex-grow gap-3 `}
-          >
-            {renderMenuItems(true)}
+          <ul id="main-menu-mobile" className={`flex flex-col w-full flex-grow gap-3`}>
+            {renderMenuItems()}
           </ul>
 
-          {/* Sidebar button group */}
           <div className="button-group flex flex-col gap-5 items-start mt-5">
             <button className="bg-[#5253B9] shadow-xl text-white lg:w-[100px] w-full py-1 rounded-3xl">
               {t("Signup")}

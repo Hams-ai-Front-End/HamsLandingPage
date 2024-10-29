@@ -61,7 +61,7 @@ const Banner = () => {
               <p
                 className=" lg:block md:bolck sm:block hidden"
                 style={{
-                  fontSize: "1em",
+                  fontSize: "1.2em",
                   margin: "0",
                   paddingTop: "30px",
                   lineHeight: "1.5",

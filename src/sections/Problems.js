@@ -66,10 +66,10 @@ const Problems = () => {
           </div>
         </Text>
 
-        <Text as="p" sx={styles.subHeading}>
+        {/* <Text as="p" sx={styles.subHeading}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Text>
+        </Text> */}
 
         <Box sx={styles.problemWrapper}>
           {problems.map((problem, index) => (

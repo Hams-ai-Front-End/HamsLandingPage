@@ -63,7 +63,7 @@ function WhatBenfit() {
       <Box sx={styles.cardGrid}>
         {items.map((item, index) => (
           <Box key={index} sx={styles.card(index)} 
-          className=" border-[1px] flex flex-col "
+          className=" border-[1px] px-6 flex flex-col "
           data-aos={"zoom-in"}
           data-aos-duration="1200" // Custom duration for each card
           data-aos-delay={index * 200} // Delay the animation for each card
@@ -75,8 +75,8 @@ function WhatBenfit() {
             </div>
            <div className=" flex-grow">
 
-           <Text as="h3" className=" py-5 font-bold text-lg ">{t(item.titleKey)}</Text>
-           <Text className="  font-light">{t(item.descriptionKey)}</Text>
+           <Text as="h3" className=" py-5 font-bold text-[24px] ">{t(item.titleKey)}</Text>
+           <Text className="  font-light text-[1.2em]">{t(item.descriptionKey)}</Text>
            </div>
           </Box>
         ))}

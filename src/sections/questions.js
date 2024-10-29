@@ -44,11 +44,11 @@ const PremiumFeature = () => {
           
         <div className="relative lg:mt-auto mt-36 h-full z-10">
             {/* Image positioned absolutely to be behind the text */}
-            <img 
+            {/* <img 
               src={bg_qa} 
               alt="most_populer_questions" 
               className="absolute start-[-30px] top-[-90px] w-[300px]  h-[300px] z-0"
-            />
+            /> */}
             <div className="bg-white div-text rounded-2xl max-h-[300px] shadow-lg border p-8 text-lg text-[#000000] z-10 relative">
               <h1 className="text-[36px] py-3 text-[#000000] font-[800]">
                 {t("Any-questions")}

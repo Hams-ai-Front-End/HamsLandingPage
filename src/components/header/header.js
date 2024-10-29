@@ -17,8 +17,9 @@ export default function Header() {
   const menuItems = [
     { name: "Home", anchor: "/", subItem: false, isHome: true },
     { name: "product", anchor: "", subItem: true },
-    { name: "FAQs", anchor: "FAQs", subItem: false },
     { name: "How it work", anchor: "HowUseIt", subItem: false },
+    { name: "FAQs", anchor: "FAQs", subItem: false },
+ 
   ];
   
 

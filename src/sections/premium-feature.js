@@ -75,10 +75,10 @@ function PremiumFeature() {
         {renderStyledText(t("How it work"))}
         <div className="w-full flex flex-col items-center justify-center">
           <hr className="h-[5px] w-[25px] bg-[#5253B9]" />
-          <p className="text-[16px] py-5 font-light px-3">
+          {/* <p className="text-[16px] py-5 font-light px-3">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut lsed do eiusmod tempor
-          </p>
+          </p> */}
         </div>
       </Text>
       <div className="grid lg:grid-cols-6">

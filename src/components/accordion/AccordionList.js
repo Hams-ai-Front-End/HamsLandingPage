@@ -30,7 +30,7 @@ const AccordionList = ({ sections, iconUp, iconDown }) => {
             className={`overflow-hidden transition-max-height duration-700 ease-in-out ${activeIndex === index ? 'max-h-96' : 'max-h-0'}`}
           >
             <div className="p-4">
-              <h3 className="text-[0.9rem] text-[#000] opacity-75 ">{section.contents}</h3>
+              <h3 className="text-[1.1rem] text-gray-500 opacity-75 ">{section.contents}</h3>
             </div>
           </div>
         </div>

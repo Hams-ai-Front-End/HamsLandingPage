@@ -22,7 +22,6 @@ export default function Header() {
     { name: "product", anchor: "", subItem: true },
     { name: "How it work", anchor: "HowUseIt", subItem: false },
     { name: "FAQs", anchor: "FAQs", subItem: false },
- 
   ];
 
   const toggleSidebar = () => {
@@ -128,7 +127,9 @@ export default function Header() {
 
         <div className="button-group hidden lg:flex gap-5 items-center">
           <button className="bg-[#5253B9] shadow-xl text-white w-[100px] py-1 rounded-3xl">
-            {t("Signup")}
+            <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
+              {t("Signup")}
+            </a>
           </button>
           <button
             onClick={changeLanguage}

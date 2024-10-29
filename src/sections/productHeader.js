@@ -45,16 +45,26 @@ function ProductHeader() {
 
             <div className="flex flex-col justify-start items-start gap-2">
               {featureItems.map((item) => (
-                <div key={item.key} className="grid grid-cols-[18px_1fr] gap-1 items-start">
-                  <FaCircle color="#5556BB" className="w-[16px] border-[3px] rounded-full border-[#8384E5] h-[16px] mt-1" />
+                <div
+                  key={item.key}
+                  className="grid grid-cols-[18px_1fr] gap-1 items-start"
+                >
+                  <FaCircle
+                    color="#5556BB"
+                    className="w-[16px] border-[3px] rounded-full border-[#8384E5] h-[16px] mt-1"
+                  />
                   <p className="text-[#7D7D7D] ">
-                    <span className="font-bold text-black ">{item.label} : </span>
+                    <span className="font-bold text-black ">
+                      {item.label} :{" "}
+                    </span>
                     {item.description}
                   </p>
                 </div>
               ))}
               <button className="rounded-3xl px-2 bg-[#3132A9] text-white hover:border-[1px] cursor-pointer transition-colors ease-in-out duration-300 hover:border-[#3132A9] hover:text-[#3132A9] hover:bg-[white] min-w-[120px] h-10">
-                {t("button_Product_Header")}
+                <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
+                  {t("button_Product_Header")}
+                </a>
               </button>
             </div>
           </div>

@@ -42,8 +42,9 @@ function SliderButton({ currentItems, selectedId, handleSelectId }) {
                       : "bg-white text-black border"
                   }`}
               >
-            <span className="flex items-center justify-center">{item.title}</span>
-
+                <span className="flex items-center justify-center">
+                  {item.title}
+                </span>
               </div>
             </button>
           ))}

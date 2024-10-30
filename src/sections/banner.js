@@ -70,8 +70,8 @@ const Banner = () => {
                 {t("Description-hjz")}
               </p>
             </div>
-            <div className=" w-full flex  justify-start items-start">
-              <button className="bg-[#5253B9] shadow-xl text-white   py-2 px-5 mt-4 rounded-3xl">
+            <div className=" w-full flex lg:hidden xl:hidden md:hidden 2xl:hidden sm:hidden  justify-start items-start">
+              <button className="bg-[#5253B9] shadow-xl text-white  flex items-center justify-center py-0 leading-none h-10 px-5 mt-4 rounded-3xl">
                 <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
                   {t("Signup")}
                 </a>

@@ -126,7 +126,7 @@ export default function Header() {
         </ul>
 
         <div className="button-group hidden lg:flex gap-5 items-center">
-          <button className="bg-[#5253B9] shadow-xl text-white w-[100px] py-1 rounded-3xl">
+          <button className="bg-[#5253B9] shadow-xl text-white   px-4 py-1 rounded-3xl">
             <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
               {t("Signup")}
             </a>
@@ -159,7 +159,9 @@ export default function Header() {
 
           <div className="button-group flex flex-col gap-5 items-start mt-5">
             <button className="bg-[#5253B9] shadow-xl text-white lg:w-[100px] w-full py-1 rounded-3xl">
+            <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
               {t("Signup")}
+            </a>
             </button>
             <button
               onClick={changeLanguage}

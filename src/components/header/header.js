@@ -109,24 +109,24 @@ export default function Header() {
 
   return (
     <div className="fixed w-full z-50 backdrop-blur-md bg-transparent">
-      <nav className="flex justify-between lg:mx-24 mx-6 py-5">
+      <nav className="flex justify-between  lg:mx-24 mx-6 py-5">
         <GatsbyLink to={"/"} className="cursor-pointer">
           <Logo />
         </GatsbyLink>
 
-        <button className="block lg:hidden text-2xl" onClick={toggleSidebar}>
+        <button className="block   lg:hidden text-2xl" onClick={toggleSidebar}>
           &#9776;
         </button>
 
         <ul
           id="main-menu"
-          className={`hidden lg:flex items-center gap-12 justify-center`}
+          className={`hidden lg:flex  flex-grow ps-12 items-center gap-6 justify-start`}
         >
           {renderMenuItems()}
         </ul>
 
         <div className="button-group hidden lg:flex gap-5 items-center">
-          <button className="bg-[#5253B9] shadow-xl text-white  px-4 py-1 rounded-3xl">
+          <button className="bg-[#5253B9] shadow-custom border-[1px] border-blue-500 text-white  px-4 py-1 rounded-3xl">
             <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
               {t("Signup")}
             </a>
@@ -158,7 +158,7 @@ export default function Header() {
           </ul>
 
           <div className="button-group flex flex-col gap-5 items-start mt-5">
-            <button className="bg-[#5253B9] shadow-xl text-white lg:w-[100px] w-full py-1 rounded-3xl">
+            <button className="bg-[#5253B9] shadow-custom border-[1px] border-blue-600 text-white lg:w-[100px] w-full py-1 rounded-3xl">
             <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
               {t("Signup")}
             </a>

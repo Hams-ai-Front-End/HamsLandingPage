@@ -6,7 +6,10 @@ import BannerForm from "./BannerForm";
 import HeaderMobileBanner from "./HeaderMobileBanner";
 import SliderButton from "./ButtonSlider";
 import pin from "../assets/images/pinss.svg";
-
+import img1 from "../assets/images/slider/aws.webp";
+import img2 from "../assets/images/slider/NVIDIA_logo.svg";
+import img3 from "../assets/images/slider/monsha.svg";
+import img4 from "../assets/images/slider/vis.svg";
 function SliderBanner() {
   const [selectedId, setSelectedId] = useState(1);
   const [isImageLoaded, setIsImageLoaded] = useState(true);
@@ -25,6 +28,7 @@ function SliderBanner() {
           currentItems={currentItems}
           selectedId={selectedId}
           handleSelectId={handleSelectId}
+      
         />
       </div>
 

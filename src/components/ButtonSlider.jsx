@@ -1,68 +1,61 @@
-import React, { useState, useEffect } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import AutoScroll from "embla-carousel-auto-scroll";
+import { cn } from "@/lib/utils";
 
-function SliderButton({ currentItems, selectedId, handleSelectId }) {
-  const [isSliderInitialized, setIsSliderInitialized] = useState(false);
-
-  const settings = {
-    dots: true,
-    speed: 500,
-    variableWidth: true,
-    slidesToScroll: 1,
-    autoplaySpeed: 1000,
-
-    centerPadding: "0px",
-    afterChange: () => setIsSliderInitialized(true),
-  };
-
-  useEffect(() => {
-    // Simulate slider initialization delay
-    setTimeout(() => {
-      setIsSliderInitialized(true);
-    }, 500);
-  }, []);
-
+const ButtonSlider = ({ className, images, currentItems,handleSelectId ,selectedId}) => {
   return (
-    <div className="z-1 rounded-[60px] lg:pt-0">
-      {isSliderInitialized ? (
-        <Slider {...settings} className="mt-0 rounded-[60px]">
+    <div className={cn("h-full w-full", className)} dir="ltr">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full relative"
+        plugins={[
+          AutoScroll({
+            stopOnInteraction: false,
+            speed: 0.7,
+            startDelay: 1000,
+          }),
+        ]}
+        dir="ltr"
+        // Disable user interaction by adding these props
+      
+      >
+        <div className="absolute left-0 h-full w-6 bg-gradient-to-l z-10 from-transparent to-gray-50" />
+        <div className="absolute right-0 h-full w-6 bg-gradient-to-r z-10 from-transparent to-gray-50" />
+        <CarouselContent className="-mt-1 flex">
           {currentItems.map((item, index) => (
-            <button
+            <CarouselItem
               key={index}
-              className="flex justify-center w-full slider px-2 items-center h-16"
-              onClick={() => handleSelectId(index)}
+              className="pt-1 flex items-center justify-center py-3"
+              style={{ flex: '0 0 auto', margin: '0 6px' }} // Allow items to take their content width
+           
             >
-              <div
-                className={`rounded-3xl w-full  flex items-center py-0 justify-center md:h-9 xl:h-10 h-9 lg:h-10 px-6 shadow-custom
+                         <div
+                className={`rounded-3xl w-full cursor-pointer  flex items-center py-0 justify-center md:h-9 xl:h-10 h-9 lg:h-10 px-6 shadow-custom
                   ${
                     selectedId === index
                       ? "bg-[#5253B9] text-white "
                       : "bg-white text-black border"
                   }`}
+                  onClick={() => handleSelectId(index)}
               >
-                <span className="flex items-center justify-center">
+                <span className="flex items-center justify-center"    >
                   {item.title}
                 </span>
               </div>
-            </button>
+            </CarouselItem>
           ))}
-        </Slider>
-      ) : (
-        <div className="flex items-center justify-center animate-pulse space-x-4">
-          {[1, 2, 3].map((_, idx) => (
-            <div
-              key={idx}
-              className="flex justify-center w-full slider px-2 items-center h-9"
-            >
-              <span className="rounded-full w-[120px] py-1 h-full px-6 bg-gray-300"></span>
-            </div>
-          ))}
-        </div>
-      )}
+        </CarouselContent>
+      </Carousel>
     </div>
   );
-}
+};
 
-export default SliderButton;
+export default ButtonSlider;

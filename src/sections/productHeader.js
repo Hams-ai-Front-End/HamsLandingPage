@@ -39,7 +39,7 @@ function ProductHeader() {
             <h1 className="gradient-text-header lg:text-[2.4em] font-bold text-[36px] text-start">
               {t("title_Product_header")}
             </h1>
-            <p className="text-[#8485E6]  lg:w-[75%] xl:w-[89%] text-[1em] text-start">
+            <p className="text-black  lg:w-[75%] xl:w-[89%] text-[1em] text-start">
               {t("description_Product_header")}
             </p>
 

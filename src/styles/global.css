@@ -125,10 +125,11 @@ background:cover;
 
 }
 
+
 .butt_conatainer{
-
-}
-
+  background:url('../assets/images/s.gif')
+  }
+  
 
 .Butt {
   --black-700: hsla(0 0% 12% / 1);
@@ -161,10 +162,14 @@ background:cover;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   background: #5253B9; /* Example gradient */
-border:2px solid #8485E6;
+  border: 3px solid white;  /* Optional for spacing */
+  box-shadow: 0 0 10px 4px rgba(0, 150, 255, 0.5); /* Adjust color, spread, and blur */
+
+  /* Optionally, add a filter to enhance the blur effect */
+  filter: blur(0.8px); /* Adjust as needed */
   border-radius: var(--border_radius);
 box-shadow:0px 6px 24px 0px rgba(49, 50, 169, 0.36);
 
@@ -236,7 +241,7 @@ box-shadow:0px 6px 24px 0px rgba(49, 50, 169, 0.36);
   background-color: #3132A9;
 
   mask: linear-gradient(transparent 0%, white 120%);
-  animation: spin 3s linear infinite;
+  animation: spin 5s linear infinite;
 }
 
 @keyframes spin {

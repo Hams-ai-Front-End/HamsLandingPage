@@ -19,7 +19,7 @@ const ButtonSlider = ({ className, images, currentItems,handleSelectId ,selected
         plugins={[
           AutoScroll({
             stopOnInteraction: false,
-            speed: 0.7,
+            speed: 0.4,
             startDelay: 1000,
           }),
         ]}

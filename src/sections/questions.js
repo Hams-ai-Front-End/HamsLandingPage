@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import "../assets/styles/banner.scss";
 import AccordionList from "../components/accordion/AccordionList";
 import bg_qa from '../assets/images/bg_vector.svg';
+import { FaQuestion } from "react-icons/fa";
 
 const PremiumFeature = () => {
   const { t } = useTranslation();
@@ -42,21 +43,22 @@ const PremiumFeature = () => {
 
         <div className="grid lg:grid-cols-2 grid-cols-1 lg:mt-12 gap-5 relative">
           
-        <div className="relative lg:mt-auto mt-36 h-full z-10">
+        <div className="relative lg:mt-auto mt-12 h-full z-10">
             {/* Image positioned absolutely to be behind the text */}
-            {/* <img 
+             {/* <img 
               src={bg_qa} 
               alt="most_populer_questions" 
               className="absolute start-[-30px] top-[-90px] w-[300px]  h-[300px] z-0"
-            /> */}
-            <div className="bg-white div-text rounded-2xl max-h-[300px] shadow-lg border p-8 text-lg text-[#000000] z-10 relative">
+            />  */}
+            {/* <FaQuestion size={100} className=" absolute start-[-30px] top-[-60px]  rotate-6  z-10" color="#5253B9" /> */}
+            <div className="bg-white div-text w-6/6 rounded-2xl max-h-[300px] shadow-lg border p-8 text-lg text-[#000000] z-0 relative">
               <h1 className="text-[36px] py-3 text-[#000000] font-[800]">
                 {t("Any-questions")}
               </h1>
               <h3 className="text-[36px] py-2 font-normal">
                 {t("Any-questions_reply")}
               </h3>
-              <p>Lorem ipsum dolor sit amet, sed do</p>
+              <p className=" opacity-0">Lorem ipsum dolor sit amet, sed do</p>
             </div>
           </div>
           <div className=" z-20">      <AccordionList sections={data} /></div>

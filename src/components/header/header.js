@@ -126,11 +126,11 @@ export default function Header() {
         </ul>
 
         <div className="button-group hidden lg:flex gap-5 items-center">
-          <button className="bg-[#5253B9] shadow-custom border-[1px] border-blue-500 text-white  px-4 py-1 rounded-3xl">
+          {/* <button className="bg-[#5253B9] shadow-custom border-[1px] border-blue-500 text-white  px-4 py-1 rounded-3xl">
             <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
               {t("Signup")}
             </a>
-          </button>
+          </button> */}
           <button
             onClick={changeLanguage}
             className="rounded-3xl w-[100px] py-1 shadow-lg border-[#00000099] bg-[#5253B917] outline-0 border"
@@ -141,13 +141,13 @@ export default function Header() {
       </nav>
 
       <div
-        className={`lg:hidden min-h-[100vh]  fixed inset-0 bg-black bg-opacity-50 transition-transform duration-300 ${
+        className={`lg:hidden min-h-[100vh]    fixed inset-0 bg-black bg-opacity-50 transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
         onClick={toggleSidebar}
       >
         <div
-          className="bg-white flex flex-col w-64 h-full p-5"
+          className="bg-white  flex flex-col w-64 h-full p-5"
           onClick={(e) => e.stopPropagation()}
         >
           <ul
@@ -158,11 +158,11 @@ export default function Header() {
           </ul>
 
           <div className="button-group flex flex-col gap-5 items-start mt-5">
-            <button className="bg-[#5253B9] shadow-custom border-[1px] border-blue-600 text-white lg:w-[100px] w-full py-1 rounded-3xl">
+            {/* <button className="bg-[#5253B9] shadow-custom border-[1px] border-blue-600 text-white lg:w-[100px] w-full py-1 rounded-3xl">
             <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
               {t("Signup")}
             </a>
-            </button>
+            </button> */}
             <button
               onClick={changeLanguage}
               className="rounded-3xl lg:w-[100px] w-full py-1 shadow-lg border-[#00000099] bg-[#5253B917] outline-0 border"

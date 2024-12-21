@@ -14,6 +14,7 @@ import img20 from "../assets/images/slider/citc_logo.svg";
 import img22 from "../assets/images/slider/ash.png";
 import img24 from "../assets/images/slider/gym.png";
 import img25 from "../assets/images/ر-47-300x190-removebg-preview.png";
+import img26 from "../assets/images/slider/ss.png";
 import img21 from "../assets/images/slider/hu.webp";
 import Particles from '../components/Particles'
 import img4 from "../assets/images/slider/vis.svg";
@@ -119,11 +120,14 @@ const Banner = () => {
       {/* <SliderComponent /> */}
       <InfiniteScrollX
         images={[
-        
+          
+     
           { id: 24, src:   img24, alt: "Image 8" },
           { id: 25, src:   img25, alt: "Image 25" },  
           { id: 19, src: img19, alt: "Image 8" },
+        
           { id: 20, src: img20, alt: "Image 8" },
+          { id: 26, src:   img26, alt: "Image 8" },
           { id: 1, src: img1, alt: "Image 1" },
           { id: 2, src: img2, alt: "Image 2" },
           { id: 3, src: img3, alt: "Image 3" },

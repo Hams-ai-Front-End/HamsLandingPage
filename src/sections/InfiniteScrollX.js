@@ -48,7 +48,7 @@ const InfiniteScrollX = ({ className, images }) => {
           item.id === 24
             ? "scale-[1.5] xl:scale-[1.3]"
             : item.id === 25
-            ? "scale-[1.8] xl:scale-[2.0]"
+            ? "scale-[1.8] xl:scale-[2.8] mt-3"
              : item.id === 20
             ? "scale-[1.8] xl:scale-[2.8]"
             : "scale-[1.5] xl:scale-[2.0]"

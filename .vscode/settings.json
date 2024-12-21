@@ -1,0 +1,8 @@
+{
+    "i18n-ally.localesPaths": [
+        "src/i18n",
+        "src/i18n/locales"
+    ],
+    "i18next.i18nPaths": "c:/xampp/htdocs/hams_demo12/src/i18n,c:/xampp/htdocs/hams_demo12/src/i18n/locales",
+    "react-i18n.i18nPaths": "src\\i18n,src\\i18n\\locales"
+}

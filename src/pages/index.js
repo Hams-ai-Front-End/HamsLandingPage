@@ -26,14 +26,13 @@ export default function IndexPage() {
         title="Hams.AI"
         description="حول النص للصوت, افضل ذكاء أصطناعي بالغة العربية, حول جميع مكلماتك لذكاء اصطناعي"
       />
-
       <Banner />
       <WhatBenfit />
       <OurMission />
       <PremiumFeature />
-    
+
       <Problems />
-    
+
       <HowItWorks />
 
       <Questions />

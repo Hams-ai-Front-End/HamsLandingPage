@@ -1,0 +1,52 @@
+{
+    "knowledgeCenter": [
+        {
+          "title": "مركز المعرفة",
+          "documents": [
+            {
+              "name": "الدليل الوطني لإدارة المشاريع",
+              "document_url": "https://knowledge.expro.gov.sa/book-detail/174"
+            },
+            {
+              "name": "الدليل الوطني لإدارة الأصول والمرافق",
+              "document_url": " https://knowledge.expro.gov.sa/book-detail/173"
+            },
+    
+            {
+              "name": "نماذج طلبات الميزانية لمشاريع الأمن السيبراني وتقنية المعلومات",
+              "document_url": " https://knowledge.expro.gov.sa/book-detail/175"
+            },
+            {
+              "name": "البوابات المرحلية",
+              "document_url": "https://knowledge.expro.gov.sa/book-detail/143"
+            },
+            {
+              "name": "إدارة التميز للجهة",
+              "document_url": "https://knowledge.expro.gov.sa/book-detail/168"
+            },
+    
+            {
+                "name": "تمكين الجهة",
+                "document_url": "https://knowledge.expro.gov.sa/book-detail/169"
+            },
+            {
+                "name": "دليل التخطيط الخمسي لمحفظة مشاريع الجهة",
+                "document_url": "https://knowledge.expro.gov.sa/book-detail/171"
+            },
+            {
+                "name": "مواد ومحتوى تدريبي",
+                "document_url": "https://knowledge.expro.gov.sa/book-detail/172"
+            },
+            {
+                "name": "المشتريات الحكومية",
+                "document_url": "https://knowledge.expro.gov.sa/book-detail/184"
+            },
+            {
+                "name": "دليل مراجعة الإنفاق",
+                "document_url": "https://expro.gov.sa/guides/erg.pdf"
+            }
+        
+          ]
+        }
+      ]
+}

@@ -21,7 +21,7 @@ function Subitem() {
       imgSrc: how03,
       titleKey: "How-work-Title-03",
       descriptionKey: "How-work-Description-03",
-      link: "/", // External link
+      link: "/AudioIntellgance", // External link
       new: false,
     },
     {

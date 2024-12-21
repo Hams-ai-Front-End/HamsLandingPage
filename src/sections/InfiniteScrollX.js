@@ -32,23 +32,32 @@ const InfiniteScrollX = ({ className, images }) => {
         <div className="absolute left-0 h-full w-6 bg-gradient-to-l z-10 from-transparent to-gray-50" />
         <div className="absolute right-0 h-full w-6 bg-gradient-to-r z-10 from-transparent to-gray-50" />
         <CarouselContent className="-mt-1 h-full max-w-full">
-          {images.map((item, index) => (
-            <CarouselItem
-              key={index}
-              className="pt-1 w-full flex items-center justify-center sm:basis-1/3 basis-1/3 md:basis-1/4 lg:basis-1/5 2xl:basis-1/6"
-            >
-              <div className="p-1">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  width={60}
-                  height={60}
-                  className="max-w-full scale-[2] object-contain aspect-[3/1.3] active:cursor-grab filter grayscale"
-                />
-              </div>
-            </CarouselItem>
-          ))}
+        {images.map((item, index) => (
+  <CarouselItem
+    key={index}
+    className="py-2 w-full  h-[85px] flex items-center justify-center sm:basis-1/3 basis-1/3 md:basis-1/4 lg:basis-1/5 2xl:basis-1/6"
+  >
+    <div className="p-0 flex items-center justify-center">
+      <img
+        src={item.src}
+        alt={item.alt}
+        loading="lazy"
+        width={item.id === 24 ? 80 : 60}
+        height={item.id === 24 ? 60 : 40}
+        className={`max-w-full object-contain aspect-[3/1.3] filter grayscale ${
+          item.id === 24
+            ? "scale-[1.5] xl:scale-[1.3]"
+            : item.id === 25
+            ? "scale-[1.8] xl:scale-[2.0]"
+             : item.id === 20
+            ? "scale-[1.8] xl:scale-[2.8]"
+            : "scale-[1.5] xl:scale-[2.0]"
+        }`}
+      />
+    </div>
+  </CarouselItem>
+))}
+
         </CarouselContent>
       </Carousel>
     </div>

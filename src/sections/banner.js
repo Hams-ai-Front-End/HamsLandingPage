@@ -9,8 +9,15 @@ import InfiniteScrollX from "./InfiniteScrollX";
 import img1 from "../assets/images/slider/aws.webp";
 import img2 from "../assets/images/slider/NVIDIA_logo.svg";
 import img3 from "../assets/images/slider/monsha.svg";
+import img19 from "../assets/images/slider/ksawaz.svg";
+import img20 from "../assets/images/slider/citc_logo.svg";
+import img22 from "../assets/images/slider/ash.png";
+import img24 from "../assets/images/slider/gym.png";
+import img25 from "../assets/images/ر-47-300x190-removebg-preview.png";
+import img21 from "../assets/images/slider/hu.webp";
 import Particles from '../components/Particles'
 import img4 from "../assets/images/slider/vis.svg";
+
 import { SlCalender } from "react-icons/sl";
 const Banner = () => {
   const { i18n, t } = useTranslation();
@@ -31,8 +38,8 @@ const Banner = () => {
   }, [i18n]);
 
   return (
-    <section id="home" sx={styles.section} className="  gradient-bg-header ">
-      <div className="lg:mx-24 py-12 lg:py-2   ">
+    <section id="home" sx={styles.section} className=" w-full flex justify-center flex-col  gradient-bg-header ">
+      <div className="lg:px-24 py-12 lg:py-2   ">
         <div className="grid justify-center xl:min-h-[90vh] h-full items-center xl:grid-cols-2 grid-cols-1  md:grid-cols-1 sm:grid-cols-1 ">
           <Box
             sx={styles.bannerContent}
@@ -112,22 +119,30 @@ const Banner = () => {
       {/* <SliderComponent /> */}
       <InfiniteScrollX
         images={[
+        
+          { id: 24, src:   img24, alt: "Image 8" },
+          { id: 25, src:   img25, alt: "Image 25" },  
+          { id: 19, src: img19, alt: "Image 8" },
+          { id: 20, src: img20, alt: "Image 8" },
           { id: 1, src: img1, alt: "Image 1" },
           { id: 2, src: img2, alt: "Image 2" },
           { id: 3, src: img3, alt: "Image 3" },
           { id: 4, src: img4, alt: "Image 4" },
           { id: 5, src: img1, alt: "Image 5" },
+          { id: 19, src: img19, alt: "Image 8" },
+          { id: 20, src: img20, alt: "Image 8" },
           { id: 6, src: img2, alt: "Image 6" },
           { id: 7, src: img1, alt: "Image 7" },
-          { id: 8, src: img2, alt: "Image 8" },
-          { id: 9, src: img1, alt: "Image 1" },
-          { id: 10, src: img2, alt: "Image 2" },
-          { id: 11, src: img3, alt: "Image 3" },
-          { id: 12, src: img4, alt: "Image 4" },
-          { id: 13, src: img1, alt: "Image 5" },
-          { id: 14, src: img2, alt: "Image 6" },
-          { id: 15, src: img1, alt: "Image 7" },
-          { id: 16, src: img2, alt: "Image 8" },
+          { id: 24, src:   img24, alt: "Image 8" },
+          { id: 25, src:   img25, alt: "Image 25" },  
+          { id: 9, src: img21, alt: "Image 1" },
+          { id: 8, src: img22, alt: "Image 8" },
+          { id: 24, src:   img24, alt: "Image 8" },
+          { id: 25, src:   img25, alt: "Image 25" },  
+          { id: 19, src: img19, alt: "Image 8" },
+          { id: 20, src: img20, alt: "Image 8" },
+        
+   
         ]}
       />
     </section>

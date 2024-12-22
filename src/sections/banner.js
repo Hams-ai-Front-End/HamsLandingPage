@@ -122,7 +122,7 @@ const Banner = () => {
         images={[
           
      
-          { id: 24, src:   img24, alt: "Image 8" },
+        
           { id: 25, src:   img25, alt: "Image 25" },  
           { id: 19, src: img19, alt: "Image 8" },
         
@@ -137,11 +137,11 @@ const Banner = () => {
           { id: 20, src: img20, alt: "Image 8" },
           { id: 6, src: img2, alt: "Image 6" },
           { id: 7, src: img1, alt: "Image 7" },
-          { id: 24, src:   img24, alt: "Image 8" },
+
           { id: 25, src:   img25, alt: "Image 25" },  
           { id: 9, src: img21, alt: "Image 1" },
           { id: 8, src: img22, alt: "Image 8" },
-          { id: 24, src:   img24, alt: "Image 8" },
+       
           { id: 25, src:   img25, alt: "Image 25" },  
           { id: 19, src: img19, alt: "Image 8" },
           { id: 20, src: img20, alt: "Image 8" },

@@ -19,7 +19,7 @@ const InfiniteScrollX = ({ className, images }) => {
         plugins={[
           AutoScroll({
             stopOnInteraction: false,
-            speed: 0.4,
+            speed: 1,
             startDelay: 1000,
           }),
         ]}

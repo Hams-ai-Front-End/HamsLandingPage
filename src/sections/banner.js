@@ -122,13 +122,16 @@ const Banner = () => {
         images={[
           
      
-        
+          { id: 8, src: img22, alt: "Image 8" },
+       
           { id: 25, src:   img25, alt: "Image 25" },  
           { id: 19, src: img19, alt: "Image 8" },
-        
+          
+     
           { id: 20, src: img20, alt: "Image 8" },
           { id: 26, src:   img26, alt: "Image 8" },
           { id: 1, src: img1, alt: "Image 1" },
+          { id: 22, src: img22, alt: "Image 8" },
           { id: 2, src: img2, alt: "Image 2" },
           { id: 3, src: img3, alt: "Image 3" },
           { id: 4, src: img4, alt: "Image 4" },

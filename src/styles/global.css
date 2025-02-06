@@ -4,16 +4,17 @@
 @tailwind utilities;
 /* global.css or index.css */
 @font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
-       url('../assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-family: "Poppins";
+  src:
+    url("../assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype"),
+    url("../assets/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Cairo';
-  src: url('../assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf') format('truetype');
+  font-family: "Cairo";
+  src: url("../assets/fonts/Cairo/Cairo-VariableFont_slnt,wght.ttf") format("truetype");
 
   font-weight: 400;
   font-style: normal;
@@ -21,7 +22,7 @@
 html,
 body {
   height: 100%;
-  font-family: 'Poppins' !important;
+  font-family: "Poppins" !important;
 }
 
 .slider {
@@ -29,22 +30,10 @@ body {
   align-items: center; /* Center items vertically */
 }
 .faded-edges {
-  mask-image: linear-gradient(
-    to left,
-    transparent,
-    white 20%,
-    white 80%,
-    transparent
-  );
+  mask-image: linear-gradient(to left, transparent, white 20%, white 80%, transparent);
 }
 .faded-edges2 {
-  mask-image: linear-gradient(
-    to left,
-    transparent,
-    white 20%,
-    white 80%,
-    transparent
-  );
+  mask-image: linear-gradient(to left, transparent, white 20%, white 80%, transparent);
 }
 
 .boxanimated {
@@ -75,8 +64,7 @@ body {
 .cover-bg {
   background-image: url("../assets/images/mobiles.svg");
 
-background:cover;
-
+  background: cover;
 }
 .box {
   @apply relative  rounded-xl; /* Main box styles */
@@ -109,27 +97,26 @@ background:cover;
 }
 
 .gradient-text-header {
-  background: linear-gradient(90deg, #3132A9, #8485E6);
+  background: linear-gradient(90deg, #3132a9, #8485e6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
 }
 
-.gradient-bg-header{
+.gradient-bg-header {
   background: linear-gradient(180deg, rgba(132, 133, 230, 0.17) 11.05%, rgba(49, 50, 169, 0.17) 29.05%, rgba(255, 255, 255, 0.17) 90.05%);
-
 }
-.gradient-shadow-bg{
-  box-shadow: 0px 4px 20px rgba(132, 133, 230, 0.17), 0px 4px 20px rgba(49, 50, 169, 0.17), 0px 4px 20px rgba(255, 255, 255, 0.17);
-
+.gradient-shadow-bg {
+  box-shadow:
+    0px 4px 20px rgba(132, 133, 230, 0.17),
+    0px 4px 20px rgba(49, 50, 169, 0.17),
+    0px 4px 20px rgba(255, 255, 255, 0.17);
 }
 
-
-.butt_conatainer{
-  background:url('../assets/images/s.gif')
-  }
-  
+.butt_conatainer {
+  background: url("../assets/images/s.gif");
+}
 
 .Butt {
   --black-700: hsla(0 0% 12% / 1);
@@ -164,17 +151,29 @@ background:cover;
 
   width: 100%;
   height: 100%;
-  background: #5253B9; /* Example gradient */
-  border: 3px solid white;  /* Optional for spacing */
-  box-shadow: 0 0 10px 4px rgba(0, 150, 255, 0.5); /* Adjust color, spread, and blur */
+  background: #5253b9; /* Example gradient */
+  border: 3px solid white; /* Optional for spacing */
+  /* box-shadow: 0 0 10px 4px rgba(0, 150, 255, 0.5); Adjust color, spread, and blur
+  box-shadow:0px 6px 24px 0px rgba(49, 50, 169, 0.36); */
 
   /* Optionally, add a filter to enhance the blur effect */
   filter: blur(0.8px); /* Adjust as needed */
   border-radius: var(--border_radius);
-box-shadow:0px 6px 24px 0px rgba(49, 50, 169, 0.36);
 
   transition: all var(--transtion);
   z-index: 0;
+}
+
+.Butt_2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: 3px solid #f1f1f1; /* Optional for spacing */
 }
 
 .Butt::after {
@@ -187,12 +186,7 @@ box-shadow:0px 6px 24px 0px rgba(49, 50, 169, 0.36);
   width: 100%;
   height: 100%;
   background-color: hsla(260 97% 61% / 0.75);
-  background-image: radial-gradient(
-      at 51% 89%,
-      hsla(266, 45%, 74%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 100% 100%, hsla(266, 36%, 60%, 1) 0px, transparent 50%),
+  background-image: radial-gradient(at 51% 89%, hsla(266, 45%, 74%, 1) 0px, transparent 50%), radial-gradient(at 100% 100%, hsla(266, 36%, 60%, 1) 0px, transparent 50%),
     radial-gradient(at 22% 91%, hsla(266, 36%, 60%, 1) 0px, transparent 50%);
   background-position: top;
 
@@ -238,10 +232,14 @@ box-shadow:0px 6px 24px 0px rgba(49, 50, 169, 0.36);
 
   width: 100%;
   height: 2rem;
-  background-color: #3132A9;
+  background-color: #3132a9;
 
   mask: linear-gradient(transparent 0%, white 120%);
   animation: spin 5s linear infinite;
+}
+
+.Butt_2 .dots_border::before {
+  background-color: #000;
 }
 
 @keyframes spin {
@@ -301,10 +299,19 @@ box-shadow:0px 6px 24px 0px rgba(49, 50, 169, 0.36);
 .Butt .text_Butt {
   position: relative;
   z-index: 10;
-
-
   background-clip: text;
-
   font-size: 1rem;
+  color: white;
+  margin-top: 2px;
+}
+
+.Butt .text_Butt_2 {
+  position: relative;
+  z-index: 10;
+  background-clip: text;
+  font-size: 1rem;
+  color: black;
+}
+.Butt .text_Butt_2:hover {
   color: white;
 }

@@ -7,10 +7,7 @@ import { Link as GatsbyLink, navigate } from "gatsby"; // Import Gatsby's Link a
 import Logo from "components/logoHeader";
 import "../../i18n/config";
 import Subitem from "../cards/Subitem";
-import {
-  MdOutlineKeyboardArrowDown,
-  MdOutlineKeyboardArrowUp,
-} from "react-icons/md";
+import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
@@ -66,35 +63,16 @@ export default function Header() {
 
   const renderMenuItems = () =>
     menuItems.map((item) => (
-      <li
-        key={item.anchor}
-        className="relative group"
-        onMouseEnter={() => setHoveredItem(item.anchor)}
-        onMouseLeave={() => setHoveredItem(null)}
-      >
+      <li key={item.anchor} className="relative group" onMouseEnter={() => setHoveredItem(item.anchor)} onMouseLeave={() => setHoveredItem(null)}>
         {item.isHome ? (
-          <GatsbyLink
-            to={item.anchor}
-            className="transition duration-300 cursor-pointer"
-          >
-            <span className="flex items-center text-gray-700 hover:text-[#5253B9]">
-              {t(item.name)}
-            </span>
+          <GatsbyLink to={item.anchor} className="transition duration-300 cursor-pointer">
+            <span className="flex items-center text-gray-700 hover:text-[#5253B9]">{t(item.name)}</span>
           </GatsbyLink>
         ) : (
-          <span
-            onClick={() => handleScrollLinkClick(item.anchor)}
-            className="transition duration-300 cursor-pointer"
-          >
+          <span onClick={() => handleScrollLinkClick(item.anchor)} className="transition duration-300 cursor-pointer">
             <span className="flex items-center text-gray-700 hover:text-[#5253B9]">
               {t(item.name)}
-              {item.subItem ? (
-                hoveredItem === item.anchor ? (
-                  <MdOutlineKeyboardArrowUp className="ml-2" />
-                ) : (
-                  <MdOutlineKeyboardArrowDown className="ml-2" />
-                )
-              ) : null}
+              {item.subItem ? hoveredItem === item.anchor ? <MdOutlineKeyboardArrowUp className="ml-2" /> : <MdOutlineKeyboardArrowDown className="ml-2" /> : null}
             </span>
 
             {item.subItem && hoveredItem === item.anchor && (
@@ -118,42 +96,29 @@ export default function Header() {
           &#9776;
         </button>
 
-        <ul
-          id="main-menu"
-          className={`hidden lg:flex  flex-grow ps-12 items-center gap-6 justify-start`}
-        >
+        <ul id="main-menu" className={`hidden lg:flex  flex-grow ps-12 items-center gap-6 justify-start`}>
           {renderMenuItems()}
         </ul>
 
         <div className="button-group hidden lg:flex gap-5 items-center">
-          {/* <button className="bg-[#5253B9] shadow-custom border-[1px] border-blue-500 text-white  px-4 py-1 rounded-3xl">
-            <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
-              {t("Signup")}
-            </a>
-          </button> */}
+          <button onClick={changeLanguage} className="rounded-3xl w-[100px] py-1 shadow-lg border-[#00000099] bg-[#5253B917] outline-0 border">
+            {currentLang === "en" ? "عربي" : "English"}
+          </button>
           <button
-            onClick={changeLanguage}
-            className="rounded-3xl w-[100px] py-1 shadow-lg border-[#00000099] bg-[#5253B917] outline-0 border"
+            className="bg-[#5253B9] shadow-custom border-white border text-white  px-6 py-1 rounded-3xl"
+            onClick={() => window.open("https://app.hams.ai/signup", "_blank")}
           >
-            {currentLang === "en" ? "Arabic" : "English"}
+            {t("Signup")}
           </button>
         </div>
       </nav>
 
       <div
-        className={`lg:hidden min-h-[100vh]    fixed inset-0 bg-black bg-opacity-50 transition-transform duration-300 ${
-          isSidebarOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`lg:hidden min-h-[100vh]    fixed inset-0 bg-black bg-opacity-50 transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
         onClick={toggleSidebar}
       >
-        <div
-          className="bg-white  flex flex-col w-64 h-full p-5"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <ul
-            id="main-menu-mobile"
-            className={`flex flex-col w-full flex-grow gap-3`}
-          >
+        <div className="bg-white  flex flex-col w-64 h-full p-5" onClick={(e) => e.stopPropagation()}>
+          <ul id="main-menu-mobile" className={`flex flex-col w-full flex-grow gap-3`}>
             {renderMenuItems()}
           </ul>
 
@@ -163,10 +128,7 @@ export default function Header() {
               {t("Signup")}
             </a>
             </button> */}
-            <button
-              onClick={changeLanguage}
-              className="rounded-3xl lg:w-[100px] w-full py-1 shadow-lg border-[#00000099] bg-[#5253B917] outline-0 border"
-            >
+            <button onClick={changeLanguage} className="rounded-3xl lg:w-[100px] w-full py-1 shadow-lg border-[#00000099] bg-[#5253B917] outline-0 border">
               {currentLang === "en" ? "Arabic" : "English"}
             </button>
           </div>

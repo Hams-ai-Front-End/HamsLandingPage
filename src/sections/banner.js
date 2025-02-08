@@ -71,7 +71,7 @@ const Banner = () => {
               </p>
             </div>
             <div className="flex w-full -ml-4 p-0 justify-start items-start mt-6">
-              <div className="relative flex min-h-[100px] ps-4 pe-12 bg-transparent flex-col items-center justify-center overflow-hidden rounded-lg">
+              <div className="relative flex min-h-[100px] ps-4 bg-transparent flex-col items-center justify-center overflow-hidden rounded-lg">
                 <button class="Butt z-20" onClick={() => window.open("https://app.hams.ai/signup", "_blank")}>
                   <div class="dots_border"></div>
                   <span class="text_Butt flex items-center justify-center gap-2">
@@ -80,7 +80,7 @@ const Banner = () => {
                 </button>
                 <Particles className="absolute z-0  shadow-none h-full inset-0" quantity={30} ease={100} color={"#8485E6"} refresh />
               </div>
-              <div className="relative flex min-h-[100px] ps-4 pe-12 bg-transparent flex-col items-center justify-center overflow-hidden rounded-lg">
+              <div className="relative flex min-h-[100px] ps-4 bg-transparent flex-col items-center justify-center overflow-hidden rounded-lg">
                 <button class="Butt Butt_2 z-20" onClick={() => window.open("https://m26ulnzthn4.typeform.com/to/LgVAbyBc", "_blank")}>
                   <div class="dots_border"></div>
                   <span class="text_Butt text_Butt_2 flex items-center justify-center gap-2">

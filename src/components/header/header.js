@@ -92,7 +92,7 @@ export default function Header() {
           <Logo />
         </GatsbyLink>
 
-        <button className="block   lg:hidden text-2xl" onClick={toggleSidebar}>
+        <button className="block lg:hidden text-2xl" onClick={toggleSidebar}>
           &#9776;
         </button>
 
@@ -104,10 +104,7 @@ export default function Header() {
           <button onClick={changeLanguage} className="rounded-3xl w-[100px] py-1 shadow-lg border-[#00000099] bg-[#5253B917] outline-0 border">
             {currentLang === "en" ? "عربي" : "English"}
           </button>
-          <button
-            className="bg-[#5253B9] shadow-custom border-white border text-white  px-6 py-1 rounded-3xl"
-            onClick={() => window.open("https://app.hams.ai/signup", "_blank")}
-          >
+          <button className="bg-[#5253B9] shadow-custom border-white border text-white  px-6 py-1 rounded-3xl" onClick={() => window.open("https://app.hams.ai/signup", "_blank")}>
             {t("Signup")}
           </button>
         </div>
@@ -123,13 +120,14 @@ export default function Header() {
           </ul>
 
           <div className="button-group flex flex-col gap-5 items-start mt-5">
-            {/* <button className="bg-[#5253B9] shadow-custom border-[1px] border-blue-600 text-white lg:w-[100px] w-full py-1 rounded-3xl">
-            <a href="https://m26ulnzthn4.typeform.com/to/LgVAbyBc">
-              {t("Signup")}
-            </a>
-            </button> */}
             <button onClick={changeLanguage} className="rounded-3xl lg:w-[100px] w-full py-1 shadow-lg border-[#00000099] bg-[#5253B917] outline-0 border">
               {currentLang === "en" ? "Arabic" : "English"}
+            </button>
+            <button
+              className="bg-[#5253B9] shadow-custom border-white border text-white  px-6 py-1 lg:w-[100px] w-full rounded-3xl"
+              onClick={() => window.open("https://app.hams.ai/signup", "_blank")}
+            >
+              {t("Signup")}
             </button>
           </div>
         </div>

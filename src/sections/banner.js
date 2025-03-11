@@ -21,44 +21,29 @@ import img4 from "../assets/images/slider/vis.svg";
 
 import { SlCalender } from "react-icons/sl";
 const Banner = () => {
-  const { i18n, t } = useTranslation();
-  const [languageChangeCount, setLanguageChangeCount] = useState(0);
+  const { t } = useTranslation();
 
   const subHeaderText = t("ONE-STOP-SHOP"); // Assuming you are using i18n for translations
 
-  useEffect(() => {
-    const handleLanguageChange = () => {
-      setLanguageChangeCount((prevCount) => prevCount + 1);
-    };
-
-    i18n.on("languageChanged", handleLanguageChange);
-
-    return () => {
-      i18n.off("languageChanged", handleLanguageChange); // Clean up the event listener
-    };
-  }, [i18n]);
-
   return (
-    <section id="home" sx={styles.section} className=" w-full flex justify-center flex-col  gradient-bg-header ">
-      <div className="lg:px-24 py-12 lg:py-2   ">
-        <div className="grid justify-center xl:min-h-[90vh] h-full items-center xl:grid-cols-2 grid-cols-1  md:grid-cols-1 sm:grid-cols-1 ">
-          <Box sx={styles.bannerContent} className="relative md:mt-12 xl:mt-4   flex flex-col p-8 pb-0  items-start   justify-start   ">
-            {" "}
+    <section id="home" sx={styles.section} className=" w-full flex justify-center flex-col gradient-bg-header ">
+      <div className="lg:px-24 py-12 lg:py-2">
+        <div className="grid justify-center xl:min-h-[90vh] h-full items-center xl:grid-cols-2 grid-cols-1 md:grid-cols-1 sm:grid-cols-1 ">
+          <Box sx={styles.bannerContent} className="relative md:mt-12 xl:mt-4 flex flex-col p-8 pb-0 items-start justify-start">
             {/* Add relative here */}
-            <div className=" my-2 shadow-custom px-1 py-2 text-start ps-5 pe-3  rounded-3xl bg-white text-sm ">{t("sub-title-banner")} </div>
+            <div className=" my-2 shadow-custom px-1 py-2 text-start ps-5 pe-3 rounded-3xl bg-white text-sm ">{t("sub-title-banner")} </div>
             {/* Text container */}
             <div>
-              {" "}
               {/* Ensure text is above image */}
               <h1 style={{ lineHeight: "1" }}>
                 <span className=" text-black gradient-text">
-                  <span className="  lg:text-[32px] text-[20px] font-[900]  leading-10"> {subHeaderText}</span>
+                  <span className="  lg:text-[32px] text-[20px] font-[900] leading-10"> {subHeaderText}</span>
 
-                  <span className="text-[#8485E6] lg:text-[32px] text-[20px] font-[900]   leading-10">{t("banner_word1")} </span>
+                  <span className="text-[#8485E6] lg:text-[32px] text-[20px] font-[900] leading-10">{t("banner_word1")} </span>
                 </span>
               </h1>
               <p
-                className=" lg:block md:bolck sm:block hidden"
+                className="lg:block md:bolck sm:block hidden"
                 style={{
                   fontSize: "1.2em",
                   margin: "0",

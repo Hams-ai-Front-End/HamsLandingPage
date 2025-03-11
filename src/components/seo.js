@@ -10,7 +10,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({
-  description = "حول النص للصوت, افضل ذكاء أصطناعي بالغة العربية, حول جميع مكلماتك لذكاء اصطناعي", 
+  description = "أفضل ذكاء اصطناعي باللغة العربية لتحويل النص إلى صوت وإنشاء وكيل افتراضي", 
   lang = "ar", 
   meta = [{author:"hams.ai"}], 
   title = "Hams.AI"

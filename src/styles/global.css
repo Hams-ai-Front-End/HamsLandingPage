@@ -301,17 +301,19 @@ body {
   z-index: 10;
   background-clip: text;
   font-size: 1rem;
-  color: white;
   margin-top: 2px;
 }
 
-.Butt .text_Butt_2 {
+.Butt {
   position: relative;
   z-index: 10;
   background-clip: text;
   font-size: 1rem;
   color: black;
 }
-.Butt .text_Butt_2:hover {
+.Butt_2:hover {
+  color: white;
+}
+.text_2 {
   color: white;
 }
